@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  nfclockios
+
+  Created by wxqdev on 15/5/22.
+  Copyright (c) 2015年 nfclock.iteasysoft.com. All rights reserved.
+*/
+"OK" = "确定";
+"Cancel" = "取消";
+"PhonenumberNotNull"="手机号码不能为空";
+"AuthcodeSendSuccess"="验证码发送成功";
+"PassowrdNotNull"="密码不能为空";
+"UsernameNotNull"="用户姓名不能为空";
+"OldpasswordNotNull"="旧密码不能为空";
+"NewpasswordNotNull"="新密码不能为空";
+"LockIdNotNull"="锁ID不能为空";
+"LockPasswordNotNull"="锁密码不能为空";
+"LockPositonNotNull"="锁位置不能为空";

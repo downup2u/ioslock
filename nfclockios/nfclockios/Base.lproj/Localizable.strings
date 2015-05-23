@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  nfclockios
+
+  Created by wxqdev on 15/5/22.
+  Copyright (c) 2015年 nfclock.iteasysoft.com. All rights reserved.
+*/
+"OK" = "OK";
+"Cancel" = "Cancel";
+"PhonenumberNotNull"="phonenumber cannot be null";
+"AuthcodeSendSuccess"="Auth code Send Success";
+"PassowrdNotNull"="PassowrdNotNull";
+"UsernameNotNull"="UsernameNotNull";
