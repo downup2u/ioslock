@@ -111,7 +111,7 @@ class LockRegisterViewController: UIViewController {
             if(msgReply.issuccess){
                 var okString = "添加成功"
                 var closeStr:String = NSLocalizedString("OK", comment:"确定")
-                let alert = SCLAlertView()
+                SCLAlertView().showSuccess("", subTitle: okString, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
                 //                alert.showTitleWithAction("", subTitle:okString, duration:0.0,completeText:closeStr,style: .Success,action:{
                 //                    alert.hideView()
                 //                    self.navigationController?.popViewControllerAnimated(true)

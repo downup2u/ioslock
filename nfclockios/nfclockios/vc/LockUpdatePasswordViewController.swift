@@ -67,8 +67,12 @@ class LockUpdatePasswordViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUpdateLockPasswordReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                //OK
+                SCLAlertView().showSuccess("", subTitle: "修改成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
             }
+            else{
+                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            }
+
         })
 
     }

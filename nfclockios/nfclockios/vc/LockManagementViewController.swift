@@ -103,7 +103,8 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
             }
             else if(indexPath.row == 1){
                 l1.text = "锁具口令"
-                l2.text = curLock.lockpasswd
+                //l2.text = curLock.lockpasswd
+                l2.hidden = true
                 b1.hidden = true
                 b2.hidden = false
                 celllock.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -183,7 +184,9 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
         button.tag = section
         button.addTarget(self, action: Selector("clickMoreOpenRecordDetail:"), forControlEvents: UIControlEvents.TouchUpInside)
         button.setTranslatesAutoresizingMaskIntoConstraints(false)
-        button.setBackgroundImage(UIImage(named:"gd"), forState: UIControlState.Normal)
+        button.setImage(UIImage(named:"gd"), forState: UIControlState.Normal)
+        //button.setBackgroundImage(UIImage(named:"gd"), forState: UIControlState.Normal)
+        button.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         var headerLabel = UILabel()
         headerLabel.text = "开门记录"
         
@@ -193,13 +196,13 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
         view.addSubview(headerLabel)
         view.addSubview(button)
         
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lab]-[btn(28)]-10-|", options: nil, metrics: nil, views:["lab":headerLabel, "btn":button]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lab]-[btn(50)]-10-|", options: nil, metrics: nil, views:["lab":headerLabel, "btn":button]))
       
 //        button.setTitleColor(UIColor.colorWithHex("#1E90FF"), forState: UIControlState.Normal)
 //        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
         
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[lab]|",options:nil, metrics:nil, views:["lab":headerLabel]))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-23-[btn(6)]|",options:nil, metrics:nil, views:["btn":button]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[btn]|",options:nil, metrics:nil, views:["btn":button]))
         
         view.backgroundColor = UIColor.colorWithHex("#CAD9F8")
 

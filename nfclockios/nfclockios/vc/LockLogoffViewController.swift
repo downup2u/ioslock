@@ -13,9 +13,9 @@ class LockLogoffViewController: UIViewController {
     var curLock = IteasyNfclock.db_lock()
     @IBOutlet weak var viewLoginBk: UIView!
     @IBOutlet weak var btnOK: UIButton!
-    @IBOutlet weak var lockidField: UITextField!
+    @IBOutlet weak var lockidField: UILabel!
     @IBOutlet weak var lockpwdField: UITextField!
-    @IBOutlet weak var lockPositionField: UITextField!
+    @IBOutlet weak var lockPositionField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ class LockLogoffViewController: UIViewController {
 //        addPaddedLeftView(self.lockpwdField,UIImage(named: "dx")!,UIImage(named: "dx_02")!)
 //        addPaddedLeftView(self.lockPositionField,UIImage(named: "dx")!,UIImage(named: "dx_02")!)
 //        
+        lockidField.text = curLock.lockdeviceid
+        lockPositionField.text = curLock.lockposition
 //        
         addButtonCorner_OK(btnOK)
         // Do any additional setup after loading the view.
@@ -50,12 +52,19 @@ class LockLogoffViewController: UIViewController {
     }
     */
     @IBAction func onClickLogoffLock(sender: AnyObject) {
+        if(lockpwdField.text != curLock.lockpasswd){
+            SCLAlertView().showError("", subTitle: "锁具密码不对", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            return
+        }
         var msgReq = IteasyNfclock.PkgLockLogOffReq.builder()
         msgReq.lockuuid = curLock.lockuuid
         var msgReply = IteasyNfclock.PkgLockLogOffReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                //OK
+                SCLAlertView().showSuccess("", subTitle: "注销成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            }
+            else{
+                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
             }
         })
         
