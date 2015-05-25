@@ -45,3 +45,19 @@ class Globals {
     }
     
 }
+
+func showError(title:String,subtitle:String){
+    TSMessage.showNotificationWithTitle(title,
+        subtitle:subtitle,
+        type:TSMessageNotificationType.Error);
+    //
+}
+
+func showSuccess(title:String,subtitle:String){
+    TSMessage.showNotificationWithTitle(title,
+        subtitle:subtitle,
+        type:TSMessageNotificationType.Success);
+    //
+}
+
+

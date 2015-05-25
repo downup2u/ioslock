@@ -70,7 +70,7 @@ class FindPasswordViewController: UIViewController {
     
     func sendAuthcode() {
         if self.phonenumberField.text.isEmpty {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("", NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
             return
         }
         
@@ -80,10 +80,11 @@ class FindPasswordViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserGetAuthReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                self.btnOK.enabled = true
+                showSuccess("",NSLocalizedString("AuthcodeSendSuccess", comment:"验证码已成功发送到手机,请查收"))
+
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
         })
 
@@ -92,18 +93,18 @@ class FindPasswordViewController: UIViewController {
       //  self.performSegueWithIdentifier("findpasswordtoAuthSegue", sender: self)
      //   return
         if self.phonenumberField.text.isEmpty {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("", NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
            return
         }
         
         if self.authcodeField.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("", NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"))
             return
         }
         if self.passwordField.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("", NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"))
             return
         }
         
@@ -121,7 +122,7 @@ class FindPasswordViewController: UIViewController {
                 self.navigationController?.pushViewController(successView, animated: true)
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("", msgReply.err)
             }
 
         })

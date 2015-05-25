@@ -150,8 +150,7 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
             onClickBtn_Delete(celluser.pkgUserUser.dbLockUserUser)
         }
       }
-        
-//      SCLAlertView().showSuccess("", subTitle: ("\(btntext)按钮点中"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+
     }
     
     func onClickBtn_Invite(var useruser:IteasyNfclock.db_lock_user_user){
@@ -162,10 +161,11 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         var msgReply = IteasyNfclock.PkgUserUserActionReply.builder()
         getLocalMsg(msgReq, msgReply,{
             if(msgReply.issuccess){
-                 SCLAlertView().showSuccess("", subTitle: "邀请成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","邀请成功")
+
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
             
         });
@@ -179,10 +179,10 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         var msgReply = IteasyNfclock.PkgUserUserActionReply.builder()
         getLocalMsg(msgReq, msgReply,{
             if(msgReply.issuccess){
-                SCLAlertView().showSuccess("", subTitle: "添加成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","添加成功")
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
             
         });
@@ -195,10 +195,10 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         var msgReply = IteasyNfclock.PkgUserDelReply.builder()
         getLocalMsg(msgReq, msgReply,{
             if(msgReply.issuccess){
-                SCLAlertView().showSuccess("", subTitle: "删除成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","删除成功")
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
             
         });

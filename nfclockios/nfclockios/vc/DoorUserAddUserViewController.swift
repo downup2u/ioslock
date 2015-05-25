@@ -63,12 +63,12 @@ class DoorUserAddUserViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserAddReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                SCLAlertView().showSuccess("", subTitle: "添加成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
-               // self.navigationController?.popViewControllerAnimated(true)
+                showSuccess("","添加成功")
+                self.navigationController?.popViewControllerAnimated(true)
                 
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
                 
             }
 

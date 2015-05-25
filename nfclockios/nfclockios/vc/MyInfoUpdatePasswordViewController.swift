@@ -43,13 +43,13 @@ class MyInfoUpdatePasswordViewController: UIViewController {
     @IBAction func onClickOK(sender: AnyObject) {
         if self.fieldOldpassword.text.isEmpty
         {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("OldpasswordNotNull", comment:"旧密码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("OldpasswordNotNull", comment:"旧密码不能为空"))
             return
         }
         
         if self.fieldNewpassword.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("NewpasswordNotNull", comment:"新密码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("NewpasswordNotNull", comment:"新密码不能为空"))
             return
         }
         
@@ -60,10 +60,11 @@ class MyInfoUpdatePasswordViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserModifyPasswordReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                    SCLAlertView().showSuccess("", subTitle: "修改成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","修改成功")
+                self.navigationController?.popViewControllerAnimated(true)
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
 
         })

@@ -17,12 +17,12 @@ class LoginViewController: UIViewController {
     @IBAction func onClickLogin(sender: AnyObject) {
         if(count(accoutField.text) == 0){
             var errString:String = "账号不能为空"
-            SCLAlertView().showNotice("", subTitle: errString, closeButtonTitle:NSLocalizedString("OK", comment:"确定") as String)
+            showError("",errString)
             return
         }
         if(count(passwordField.text) == 0){
             var errString:String = "密码不能为空"
-            SCLAlertView().showNotice("", subTitle: errString, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",errString)
             return
         }
         var msgReq = IteasyNfclock.PkgUserLoginReq.builder()
@@ -56,8 +56,7 @@ class LoginViewController: UIViewController {
                     
                 }
                 else{
-                   SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
-                    
+                    showError("",msgReply.err)
 
                     return
                 }

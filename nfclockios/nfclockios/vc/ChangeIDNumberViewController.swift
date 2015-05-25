@@ -37,10 +37,11 @@ class ChangeIDNumberViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgNameIDCardRegisterReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                 SCLAlertView().showSuccess("", subTitle: "修改成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","修改成功")
+                self.navigationController?.popViewControllerAnimated(true)
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
         })
 

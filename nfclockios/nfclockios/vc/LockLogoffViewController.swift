@@ -53,7 +53,7 @@ class LockLogoffViewController: UIViewController {
     */
     @IBAction func onClickLogoffLock(sender: AnyObject) {
         if(lockpwdField.text != curLock.lockpasswd){
-            SCLAlertView().showError("", subTitle: "锁具密码不对", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("","锁具密码不对")
             return
         }
         var msgReq = IteasyNfclock.PkgLockLogOffReq.builder()
@@ -61,10 +61,12 @@ class LockLogoffViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgLockLogOffReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                SCLAlertView().showSuccess("", subTitle: "注销成功", closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("","注销成功")
+                self.navigationController?.popViewControllerAnimated(true)
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
+
             }
         })
         

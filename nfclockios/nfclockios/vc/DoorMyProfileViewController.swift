@@ -165,7 +165,7 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
                 appDel.setLoginviewAsRootView()
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+               showError("",msgReply.err)
             }
         })
 

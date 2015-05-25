@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController {
     func sendAuthcode() {
         if self.phonenumberField.text.isEmpty
         {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
             return
         }
         
@@ -84,10 +84,10 @@ class RegisterViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserGetAuthReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                SCLAlertView().showSuccess("", subTitle : NSLocalizedString("AuthcodeSendSuccess", comment:"验证码已成功发送到手机,请查收"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showSuccess("",NSLocalizedString("AuthcodeSendSuccess", comment:"验证码已成功发送到手机,请查收"))
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
         })
 
@@ -96,23 +96,23 @@ class RegisterViewController: UIViewController {
     @IBAction func btnRegisterOK(sender: AnyObject) {
         if self.phonenumberField.text.isEmpty
         {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
-            return
+            showError("",NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
+             return
         }
 
         if self.authcodeField.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"))
             return
         }
         if self.passwordField.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"))
             return
         }
         if self.userField.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("UsernameNotNull", comment:"请输入真实用户姓名"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("UsernameNotNull", comment:"请输入真实用户姓名"))
             return
         }
         var msgReq = IteasyNfclock.PkgUserAuthSetReq.builder()
@@ -130,7 +130,7 @@ class RegisterViewController: UIViewController {
                 
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
         })
 

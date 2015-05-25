@@ -44,13 +44,13 @@ class ChangePhoneViewController: UIViewController {
     @IBAction func onClickOK(sender: AnyObject) {
         if self.fieldPhone.text.isEmpty
         {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
             return
         }
         
         if self.fieldAuthcode.text.isEmpty
         {
-            SCLAlertView().showNotice("", subTitle: NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("AuthCodeNotNull", comment:"验证码不能为空"))
             return
         }
         var msgReq = IteasyNfclock.PkgUserResetPhonenumberReq.builder()
@@ -62,7 +62,7 @@ class ChangePhoneViewController: UIViewController {
                 
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+                showError("",msgReply.err)
             }
         })
 
@@ -86,7 +86,7 @@ class ChangePhoneViewController: UIViewController {
     func sendAuthcode() {
         if self.fieldPhone.text.isEmpty
         {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("", NSLocalizedString("PhonenumberNotNull", comment:"手机号码不能为空"))
             return
         }
         
@@ -96,10 +96,10 @@ class ChangePhoneViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserGetAuthReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                
+               showSuccess("",NSLocalizedString("AuthcodeSendSuccess", comment:"验证码已成功发送到手机,请查收"))
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+             showError("",msgReply.err)
             }
         })
         

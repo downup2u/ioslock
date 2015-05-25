@@ -82,17 +82,17 @@ class LockRegisterViewController: UIViewController {
     }
     @IBAction func onClickOK(sender: AnyObject) {
         if self.lockidField.text.isEmpty {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("LockIdNotNull", comment:"锁ID不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("LockIdNotNull", comment:"锁ID不能为空"))
             return
         }
         
         if self.lockpwdField.text.isEmpty {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("LockPasswordNotNull", comment:"锁密码不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("LockPasswordNotNull", comment:"锁密码不能为空"))
             return
         }
         
         if self.lockPositionField.text.isEmpty {
-            SCLAlertView().showError("", subTitle: NSLocalizedString("LockPositonNotNull", comment:"锁位置不能为空"), closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+            showError("",NSLocalizedString("LockPositonNotNull", comment:"锁位置不能为空"))
             return
         }
         
@@ -109,18 +109,12 @@ class LockRegisterViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgLockAddReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                var okString = "添加成功"
-                var closeStr:String = NSLocalizedString("OK", comment:"确定")
-                SCLAlertView().showSuccess("", subTitle: okString, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
-                //                alert.showTitleWithAction("", subTitle:okString, duration:0.0,completeText:closeStr,style: .Success,action:{
-                //                    alert.hideView()
-                //                    self.navigationController?.popViewControllerAnimated(true)
-                //
-                //                })
+                showSuccess("","添加成功")
+                self.navigationController?.popViewControllerAnimated(true)
                 
             }
             else{
-                SCLAlertView().showError("", subTitle: msgReply.err, closeButtonTitle:NSLocalizedString("OK", comment:"确定"))
+              showError("",msgReply.err)
             }
         })
     }

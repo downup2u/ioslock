@@ -12,4 +12,6 @@
 #import "OCWrap.h"
 #import "SWTableViewCell.h"
 #import "CkCalendarView.h"
+#import "TSMessage.h"
+#import "TSMessageView.h"
 #endif
