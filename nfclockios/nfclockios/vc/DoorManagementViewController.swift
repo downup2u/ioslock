@@ -10,6 +10,9 @@ import UIKit
 
 class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate {
 
+    var ownerLockArray = [IteasyNfclock.db_lock()]
+    var otherLockArray = [IteasyNfclock.db_lock()]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self as UICollectionViewDataSource
@@ -21,6 +24,7 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
         self.navigationItem.titleView = searchBar
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLockCallback:", name: "onLockCallback", object: nil)
+        loaddata()
         
     }
     
@@ -29,7 +33,15 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
     func onLockCallback(notification: NSNotification){
+        loaddata()
+        
+    }
+    
+    func loaddata(){
+        self.ownerLockArray = GlobalSessionUser.shared.ownerLockArray
+        self.otherLockArray = GlobalSessionUser.shared.otherLockArray
         collectionView.reloadData()
+
     }
 
     @IBOutlet var collectionView: UICollectionView!
@@ -47,7 +59,7 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        var ilock = GlobalSessionUser.shared.ownerLockArray.count
+        var ilock = self.ownerLockArray.count
         return ilock + 1
     }
     
@@ -59,7 +71,7 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
             btnaddlock.addTarget(self, action: "onClickAddnew:", forControlEvents: UIControlEvents.TouchUpInside)
         }
         else{
-            var  curLock = GlobalSessionUser.shared.ownerLockArray[indexPath.row - 1]
+            var  curLock = self.ownerLockArray[indexPath.row - 1]
             collectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
             var btnlock = collectionViewCell.viewWithTag(101) as! UIButton
             var labelname = collectionViewCell.viewWithTag(102) as! UILabel
@@ -70,10 +82,6 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
             btnlock.setBackgroundImage(UIImage.imageWithColor(UIColor.colorWithHex("#213F7F")), forState: UIControlState.Selected)
             btnlock.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Selected)
             
-//            btnlock.layer.borderColor = UIColor.clearColor().CGColor
-//            btnlock.layer.borderWidth = 1
-//            btnlock.layer.cornerRadius = 6
-//            btnlock.layer.masksToBounds = true
             
             var lockposition = curLock.lockposition
             var lockname = curLock.lockdeviceid
@@ -100,10 +108,10 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
         
         var lock = IteasyNfclock.db_lock()
         if(locktype == "owner"){
-            lock = GlobalSessionUser.shared.ownerLockArray[index]
+            lock = self.ownerLockArray[index]
         }
         else if(locktype  == "other"){
-            lock = GlobalSessionUser.shared.otherLockArray[index]
+            lock = self.otherLockArray[index]
           
         }
         
@@ -135,21 +143,38 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
     
     
     func doSearch(searchBar: UISearchBar,var searchtext :String){
-        //   searchBar.setShowsCancelButton(true, animated: true)
-//        self.userArray.removeAll(keepCapacity: true)
-//        for userbuilder in Globals.shared.userArray{
-//            if(searchtext == ""){
-//                self.userArray.append(userbuilder)
-//            }
-//            else{
-//                
-//                if let srange = userbuilder.realname.rangeOfString(searchtext){
-//                    self.userArray.append(userbuilder)
-//                }
-//            }
-//            
-//        }
-//        self.memberstable.reloadData()
+        
+        self.ownerLockArray.removeAll(keepCapacity: true)
+        self.otherLockArray.removeAll(keepCapacity: true)
+        for lock in GlobalSessionUser.shared.ownerLockArray{
+            if(searchtext == ""){
+                self.ownerLockArray.append(lock)
+            }
+            else{
+                
+                if let srange = lock.lockposition.rangeOfString(searchtext){
+                    self.ownerLockArray.append(lock)
+                }
+                else if let srange = lock.lockdeviceid.rangeOfString(searchtext){
+                    self.ownerLockArray.append(lock)
+                }
+            }
+        }
+        for lock in GlobalSessionUser.shared.otherLockArray{
+            if(searchtext == ""){
+                self.otherLockArray.append(lock)
+            }
+            else{
+                
+                if let srange = lock.lockposition.rangeOfString(searchtext){
+                    self.otherLockArray.append(lock)
+                }
+                else if let srange = lock.lockdeviceid.rangeOfString(searchtext){
+                    self.otherLockArray.append(lock)
+                }
+            }
+        }
+        collectionView.reloadData()
         
     }
 

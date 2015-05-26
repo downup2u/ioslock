@@ -10,6 +10,9 @@ import UIKit
 
 class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate, SWTableViewCellDelegate{
     let identifier = "cell"
+    
+    var userArray = [IteasyNfclock.PkgUserUsers()]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +37,7 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         var rightBarButtonItem = UIBarButtonItem(customView:btnOK)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
 
-        
+        loaddata()
         
     }
     
@@ -43,6 +46,11 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
     }
     
     func onUserCallback(notification: NSNotification){
+        loaddata()
+    }
+    
+    func loaddata(){
+        self.userArray = GlobalSessionUser.shared.userArray
         self.memberstable.reloadData()
     }
     
@@ -88,8 +96,8 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
 
         var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? useruserTableViewCell
         var index = indexPath.row
-        if(GlobalSessionUser.shared.userArray.count > index){
-           cell?.pkgUserUser = GlobalSessionUser.shared.userArray[index]
+        if(self.userArray.count > index){
+           cell?.pkgUserUser = self.userArray[index]
            cell?.delegate = self
            cell?.setusers()
         }
@@ -111,7 +119,7 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         
-        return GlobalSessionUser.shared.userArray.count
+        return self.userArray.count
     }
     
     
@@ -205,7 +213,43 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
 
         
     }
-
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        var searchtext = searchBar.text
+        doSearch(searchBar,searchtext:searchtext)
+        // keyboard.endEditing()
+    }
+    
+    
+    func searchBar(searchBar: UISearchBar,textDidChange searchText: String){
+        
+        doSearch(searchBar,searchtext:searchText)
+    }
+    
+    
+    func doSearch(searchBar: UISearchBar,var searchtext :String){
+        
+        self.userArray.removeAll(keepCapacity: true)
+       
+        for useruser in GlobalSessionUser.shared.userArray{
+            if(searchtext == ""){
+                self.userArray.append(useruser)
+            }
+            else{
+                
+                if let srange = useruser.dbLockUserUser.userphonenumber.rangeOfString(searchtext){
+                    self.userArray.append(useruser)
+                }
+                else if let srange = useruser.dbLockUserUser.departmentname.rangeOfString(searchtext){
+                    self.userArray.append(useruser)
+                }
+                else if let srange = useruser.dbLockUserUser.truename.rangeOfString(searchtext){
+                    self.userArray.append(useruser)
+                }
+            }
+        }
+        self.memberstable.reloadData()
+        
+    }
 }
 
 
