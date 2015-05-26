@@ -25,9 +25,9 @@ class LockRegisterViewController: UIViewController {
         viewLoginBk.layer.cornerRadius = 6
         viewLoginBk.layer.masksToBounds = true
         
-        addPaddedLeftView(self.lockidField,UIImage(named: "sj")!,UIImage(named: "sj_02")!)
-        addPaddedLeftView(self.lockpwdField,UIImage(named: "dx")!,UIImage(named: "dx_02")!)
-        addPaddedLeftView(self.lockPositionField,UIImage(named: "dx")!,UIImage(named: "dx_02")!)
+        addPaddedLeftView(self.lockidField,UIImage(named: "xj_id")!,UIImage(named: "xj_id")!)
+        addPaddedLeftView(self.lockpwdField,UIImage(named: "xj_kl")!,UIImage(named: "xj_kl")!)
+        addPaddedLeftView(self.lockPositionField,UIImage(named: "xj_wz")!,UIImage(named: "xj_wz")!)
         
         
         addButtonCorner_OK(btnOK)

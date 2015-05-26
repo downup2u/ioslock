@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // TSMessage.addCustomDesignFromFileWithName("AlternativeDesign.json")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSrvMessage:", name: "onSrvMessage", object: nil)
         // Override point for customization after application launch.
-        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.102:9002 --connectinterval=3 --autoconnect=true"
+        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.199:9002 --connectinterval=3 --autoconnect=true"
         OCWrap.initModule(sArgs)
         println("application->current thread = \(NSThread.currentThread())");
         return true
@@ -60,46 +60,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("msgHexData:\(msgHexData)")
 
         dispatch_sync(dispatch_get_main_queue(), {
-            if(msgReply.resmsgtype == "iteasy_nfclock.PkgSrvPushLocks"){
-                var msgReply2 = IteasyNfclock.PkgSrvPushLocks.builder()
-                let hexData = hexStringToData(msgReply.resmsgdata)
-                msgReply2.mergeFromData(hexData)
-                GlobalSessionUser.shared.onGetLocks(msgReply2)
-            }
-            else if(msgReply.resmsgtype=="iteasy_nfclock.PkgSrvPushUserUsers"){
-                var msgReply2 = IteasyNfclock.PkgSrvPushUserUsers.builder()
-                let hexData = hexStringToData(msgReply.resmsgdata)
-                msgReply2.mergeFromData(hexData)
-                GlobalSessionUser.shared.onGetUsers(msgReply2)
-                
-            }
-            else if(msgReply.resmsgtype=="iteasy_nfclock.PkgSrvPushLockListPasswordList"){
-                var msgReply2 = IteasyNfclock.PkgSrvPushLockListPasswordList.builder()
-                let hexData = hexStringToData(msgReply.resmsgdata)
-                msgReply2.mergeFromData(hexData)
-                GlobalSessionUser.shared.onGetLockPassword(msgReply2)
-                
-            }
-            else if(msgReply.enmsgstatuscode == Comminternal.PkgMsg.EnMsgStatusCode.MsgConnected){
-                if(GlobalSessionUser.shared.islogined){
-                    var msgReq = IteasyNfclock.PkgUserLoginReq.builder()
-                    msgReq.logintype = IteasyNfclock.EnLoginType.LoginTypePhonenumber
-                    msgReq.phonenumber = GlobalSessionUser.shared.phonenumber
-                    msgReq.userpassword = GlobalSessionUser.shared.passwordsaved
-                    var msgReply = IteasyNfclock.PkgUserLoginReply.builder()
-                    getLocalMsg(msgReq,msgReply,{
-                        if(msgReply.issuccess){
-                            GlobalSessionUser.shared.truename = msgReply.truename
-                            GlobalSessionUser.shared.phonenumber = msgReply.phonenumber
-                            GlobalSessionUser.shared.idcardnumber = msgReply.idcardnumber
-                            GlobalSessionUser.shared.registertime = msgReply.registertime
-                            GlobalSessionUser.shared.islogined = true
-                        }
-                    })
+            if msgReply.enmsgstatuscode == Comminternal.PkgMsg.EnMsgStatusCode.MsgStatusnone{
+                if(msgReply.resmsgtype == "iteasy_nfclock.PkgSrvPushLocks"){
+                    var msgReply2 = IteasyNfclock.PkgSrvPushLocks.builder()
+                    let hexData = hexStringToData(msgReply.resmsgdata)
+                    msgReply2.mergeFromData(hexData)
+                    GlobalSessionUser.shared.onGetLocks(msgReply2)
+                }
+                else if(msgReply.resmsgtype=="iteasy_nfclock.PkgSrvPushUserUsers"){
+                    var msgReply2 = IteasyNfclock.PkgSrvPushUserUsers.builder()
+                    let hexData = hexStringToData(msgReply.resmsgdata)
+                    msgReply2.mergeFromData(hexData)
+                    GlobalSessionUser.shared.onGetUsers(msgReply2)
+                    
+                }
+                else if(msgReply.resmsgtype=="iteasy_nfclock.PkgSrvPushLockListPasswordList"){
+                    var msgReply2 = IteasyNfclock.PkgSrvPushLockListPasswordList.builder()
+                    let hexData = hexStringToData(msgReply.resmsgdata)
+                    msgReply2.mergeFromData(hexData)
+                    GlobalSessionUser.shared.onGetLockPassword(msgReply2)
+                    
+                }
+                else{
+                    NSNotificationCenter.defaultCenter().postNotificationName("onDataCallback", object: notification.object)
                 }
             }
             else{
-                NSNotificationCenter.defaultCenter().postNotificationName("onDataCallback", object: notification.object)
+                if(msgReply.enmsgstatuscode == Comminternal.PkgMsg.EnMsgStatusCode.MsgConnected){
+                    if(msgReply.issuc){
+                        showSuccess("", "连接服务器成功")
+                    }
+                    else {
+                        showError("", "链接服务器失败")
+                    }
+                
+                    if(msgReply.issuc && GlobalSessionUser.shared.islogined){
+                        var msgReq = IteasyNfclock.PkgUserLoginReq.builder()
+                        msgReq.logintype = IteasyNfclock.EnLoginType.LoginTypePhonenumber
+                        msgReq.phonenumber = GlobalSessionUser.shared.phonenumber
+                        msgReq.userpassword = GlobalSessionUser.shared.passwordsaved
+                        var msgReply = IteasyNfclock.PkgUserLoginReply.builder()
+                        getLocalMsg(msgReq,msgReply,{
+                            if(msgReply.issuccess){
+                                GlobalSessionUser.shared.truename = msgReply.truename
+                                GlobalSessionUser.shared.phonenumber = msgReply.phonenumber
+                                GlobalSessionUser.shared.idcardnumber = msgReply.idcardnumber
+                                GlobalSessionUser.shared.registertime = msgReply.registertime
+                                GlobalSessionUser.shared.islogined = true
+                            }
+                        })
+                    }
+                }
+                
             }
         })
             

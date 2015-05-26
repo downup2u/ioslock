@@ -62,7 +62,7 @@ class LockLogoffViewController: UIViewController {
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
                 showSuccess("","注销成功")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
             else{
                 showError("",msgReply.err)
