@@ -21,8 +21,8 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
         
         var btnOK = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        btnOK.frame = CGRectMake(0, 0, 32, 32);
-        btnOK.setBackgroundImage(UIImage(named: "sq_tj"), forState: UIControlState.Normal)
+        btnOK.frame = CGRectMake(0, 0, 64, 32);
+        btnOK.setBackgroundImage(UIImage(named: "qd"), forState: UIControlState.Normal)
         btnOK.addTarget(self, action: "onClickOK:", forControlEvents: UIControlEvents.TouchUpInside)
         var rightBarButtonItem = UIBarButtonItem(customView:btnOK)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem

@@ -2131,9 +2131,9 @@
         <image name="tianjia" width="35" height="35"/>
         <image name="tianjia_02" width="35" height="34"/>
         <image name="tou_x" width="50" height="50"/>
-        <image name="xg" width="17" height="18"/>
+        <image name="xg" width="17" height="17"/>
         <image name="xsbj" width="76" height="77"/>
-        <image name="zt" width="22" height="20"/>
+        <image name="zt" width="21" height="20"/>
         <image name="zy" width="32" height="32"/>
     </resources>
 </document>
