@@ -269,7 +269,7 @@
         <scene sceneID="JRB-Hi-Te8">
             <objects>
                 <navigationController storyboardIdentifier="nav_opendoor" id="qrt-sN-L07" userLabel="导航（开门）" customClass="RootNavigationViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tab0" id="8t7-8D-Eqn"/>
+                    <tabBarItem key="tabBarItem" title="" id="8t7-8D-Eqn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0qL-1Z-B2D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -372,7 +372,7 @@
                                     <constraint firstItem="RcO-A2-tlN" firstAttribute="centerX" secondItem="NHO-T3-6gQ" secondAttribute="centerX" id="weJ-f5-L8R"/>
                                 </constraints>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="m5M-A4-o87">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellother" id="m5M-A4-o87">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -591,7 +591,7 @@
         <scene sceneID="mNr-Ce-CJV">
             <objects>
                 <navigationController storyboardIdentifier="nav_me" automaticallyAdjustsScrollViewInsets="NO" id="NwG-Ra-v4A" userLabel="导航（我）" customClass="RootNavigationViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tab2" id="4pT-hZ-DgD"/>
+                    <tabBarItem key="tabBarItem" title="" id="4pT-hZ-DgD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="x35-te-Sih">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -746,7 +746,7 @@
         <scene sceneID="NTn-EK-ug3">
             <objects>
                 <navigationController storyboardIdentifier="nav_doormanager" automaticallyAdjustsScrollViewInsets="NO" id="XSn-b1-kfG" userLabel="导航（门禁管理）" customClass="RootNavigationViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tab1" id="WsZ-ee-OYX"/>
+                    <tabBarItem key="tabBarItem" title="" id="WsZ-ee-OYX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eEA-cv-MB0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1064,7 +1064,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMa-d8-VzT" userLabel="v21">
-                                        <rect key="frame" x="16" y="50" width="512" height="2"/>
+                                        <rect key="frame" x="16" y="52" width="512" height="2"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="Hsu-eD-qf7"/>
@@ -1080,23 +1080,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密码:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-wi-jQH">
-                                        <rect key="frame" x="16" y="72" width="69" height="21"/>
+                                        <rect key="frame" x="16" y="69" width="69" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="不少于6个字符" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfo-7j-6ep" userLabel="pf">
-                                        <rect key="frame" x="86" y="59" width="442" height="50"/>
+                                        <rect key="frame" x="86" y="61" width="442" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hfo-7j-6ep" secondAttribute="bottom" constant="-4" id="7Tt-zt-Tbs"/>
+                                    <constraint firstAttribute="bottom" secondItem="hfo-7j-6ep" secondAttribute="bottom" constant="4" id="7Tt-zt-Tbs"/>
                                     <constraint firstItem="KC2-Z5-uXv" firstAttribute="top" secondItem="UBo-PS-396" secondAttribute="top" constant="3" id="7UC-jt-Tam"/>
                                     <constraint firstItem="0zD-UV-KpM" firstAttribute="trailing" secondItem="YaF-wi-jQH" secondAttribute="trailing" id="FfF-Pa-iPi"/>
-                                    <constraint firstItem="dMa-d8-VzT" firstAttribute="top" secondItem="KC2-Z5-uXv" secondAttribute="bottom" constant="2" id="HNG-fJ-dtV"/>
+                                    <constraint firstItem="dMa-d8-VzT" firstAttribute="top" secondItem="KC2-Z5-uXv" secondAttribute="bottom" constant="4" id="HNG-fJ-dtV"/>
                                     <constraint firstItem="KC2-Z5-uXv" firstAttribute="leading" secondItem="hfo-7j-6ep" secondAttribute="leading" id="Hxn-hl-33Q"/>
                                     <constraint firstItem="KC2-Z5-uXv" firstAttribute="baseline" secondItem="0zD-UV-KpM" secondAttribute="baseline" id="J0Y-N4-Cqy"/>
                                     <constraint firstItem="dMa-d8-VzT" firstAttribute="leading" secondItem="YaF-wi-jQH" secondAttribute="leading" id="VRF-f2-5Hf"/>
@@ -1106,16 +1106,10 @@
                                     <constraint firstItem="hfo-7j-6ep" firstAttribute="trailing" secondItem="KC2-Z5-uXv" secondAttribute="trailing" id="dl0-b0-Qzt"/>
                                     <constraint firstAttribute="height" constant="105" id="foP-Mu-che"/>
                                     <constraint firstItem="dMa-d8-VzT" firstAttribute="trailing" secondItem="KC2-Z5-uXv" secondAttribute="trailing" id="gAF-oG-uW5"/>
-                                    <constraint firstAttribute="trailing" secondItem="KC2-Z5-uXv" secondAttribute="trailing" id="lPs-de-zCr"/>
                                     <constraint firstItem="0zD-UV-KpM" firstAttribute="leading" secondItem="UBo-PS-396" secondAttribute="leading" constant="16" id="lRA-9d-Len"/>
                                     <constraint firstItem="hfo-7j-6ep" firstAttribute="top" secondItem="dMa-d8-VzT" secondAttribute="bottom" constant="7" id="urB-XP-Ro9"/>
                                     <constraint firstItem="hfo-7j-6ep" firstAttribute="baseline" secondItem="YaF-wi-jQH" secondAttribute="baseline" id="vie-Lj-Ynv"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lPs-de-zCr"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyw-3E-fV4">
                                 <rect key="frame" x="28" y="239" width="544" height="45"/>
@@ -1437,7 +1431,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="锁具口令" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-0X-Qxc" userLabel="pf">
-                                        <rect key="frame" x="115" y="52" width="421" height="45"/>
+                                        <rect key="frame" x="115" y="54" width="421" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -1488,11 +1482,10 @@
                                 <constraints>
                                     <constraint firstItem="GRm-Ij-b60" firstAttribute="width" secondItem="7aT-A0-rB8" secondAttribute="width" id="08A-Aj-ZHL"/>
                                     <constraint firstItem="STF-ig-BB2" firstAttribute="top" secondItem="2nG-jn-3WS" secondAttribute="bottom" constant="2" id="1Kn-mW-J6g"/>
-                                    <constraint firstAttribute="trailing" secondItem="STF-ig-BB2" secondAttribute="trailing" id="8M8-Sx-SFA"/>
                                     <constraint firstItem="Yvb-kb-drz" firstAttribute="top" secondItem="STF-ig-BB2" secondAttribute="bottom" constant="12" id="8ug-5R-Eb2"/>
                                     <constraint firstItem="STF-ig-BB2" firstAttribute="leading" secondItem="GRm-Ij-b60" secondAttribute="leading" id="9j9-dy-pqB"/>
                                     <constraint firstItem="7aT-A0-rB8" firstAttribute="leading" secondItem="BKK-0J-wyB" secondAttribute="leading" id="9vR-4O-HPU"/>
-                                    <constraint firstItem="BKK-0J-wyB" firstAttribute="top" secondItem="d6g-0X-Qxc" secondAttribute="bottom" constant="2" id="EEB-nl-S6d"/>
+                                    <constraint firstItem="BKK-0J-wyB" firstAttribute="top" secondItem="d6g-0X-Qxc" secondAttribute="bottom" constant="4" id="EEB-nl-S6d"/>
                                     <constraint firstAttribute="height" constant="150" id="EjJ-i1-9wH"/>
                                     <constraint firstItem="Yvb-kb-drz" firstAttribute="leading" secondItem="BKK-0J-wyB" secondAttribute="leading" id="GUb-9l-dut"/>
                                     <constraint firstItem="BKK-0J-wyB" firstAttribute="trailing" secondItem="kMb-Vm-oU5" secondAttribute="trailing" id="HDv-uf-hSB"/>
@@ -1504,7 +1497,6 @@
                                     <constraint firstItem="2nG-jn-3WS" firstAttribute="trailing" secondItem="STF-ig-BB2" secondAttribute="trailing" id="XE7-1J-Ewp"/>
                                     <constraint firstItem="BKK-0J-wyB" firstAttribute="trailing" secondItem="STF-ig-BB2" secondAttribute="trailing" id="ZWz-hD-3rA"/>
                                     <constraint firstItem="GRm-Ij-b60" firstAttribute="centerY" secondItem="2nG-jn-3WS" secondAttribute="centerY" id="a6S-UE-z3n"/>
-                                    <constraint firstItem="d6g-0X-Qxc" firstAttribute="leading" secondItem="Yvb-kb-drz" secondAttribute="trailing" constant="8" id="a9U-Eu-87Z"/>
                                     <constraint firstItem="Yvb-kb-drz" firstAttribute="leading" secondItem="STF-ig-BB2" secondAttribute="leading" id="aBq-7t-lqf"/>
                                     <constraint firstItem="kMb-Vm-oU5" firstAttribute="top" secondItem="BKK-0J-wyB" secondAttribute="bottom" id="bdo-QX-vh3"/>
                                     <constraint firstItem="BKK-0J-wyB" firstAttribute="trailing" secondItem="d6g-0X-Qxc" secondAttribute="trailing" id="eR5-pS-ZML"/>
@@ -1517,12 +1509,6 @@
                                     <constraint firstItem="GRm-Ij-b60" firstAttribute="leading" secondItem="G3c-Qn-A6T" secondAttribute="leading" constant="16" id="whD-VQ-foD"/>
                                     <constraint firstItem="GRm-Ij-b60" firstAttribute="width" secondItem="Yvb-kb-drz" secondAttribute="width" id="wwk-cH-h0L"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8M8-Sx-SFA"/>
-                                        <exclude reference="a9U-Eu-87Z"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2125,9 +2111,6 @@
         <image name="gx_03" width="18" height="18"/>
         <image name="ma" width="17" height="18"/>
         <image name="mqf_02" width="35" height="35"/>
-        <image name="tab0" width="27" height="34"/>
-        <image name="tab1" width="32" height="32"/>
-        <image name="tab2" width="32" height="32"/>
         <image name="tianjia" width="35" height="35"/>
         <image name="tianjia_02" width="35" height="34"/>
         <image name="tou_x" width="50" height="50"/>

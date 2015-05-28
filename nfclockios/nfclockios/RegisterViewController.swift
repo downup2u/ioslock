@@ -110,6 +110,11 @@ class RegisterViewController: UIViewController {
             showError("",NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"))
             return
         }
+        if count(self.passwordField.text) < 6
+        {
+            showError("", "密码必须大于6位")
+            return
+        }
         if self.userField.text.isEmpty
         {
             showError("",NSLocalizedString("UsernameNotNull", comment:"请输入真实用户姓名"))
@@ -125,8 +130,8 @@ class RegisterViewController: UIViewController {
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
                 Globals.shared.setCheckPassword(Globals.shared.getCheckPassword(), Username: self.phonenumberField.text, Password: self.passwordField.text)
-                let successView  = self.storyboard?.instantiateViewControllerWithIdentifier("successview") as! SuccessViewController
-                self.navigationController?.pushViewController(successView, animated: true)
+                showSuccess("", "注册成功")
+                self.navigationController?.popToRootViewControllerAnimated(true)
                 
             }
             else{

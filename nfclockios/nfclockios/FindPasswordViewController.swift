@@ -107,7 +107,11 @@ class FindPasswordViewController: UIViewController {
             showError("", NSLocalizedString("PassowrdNotNull", comment:"密码不能为空"))
             return
         }
-        
+        if count(self.passwordField.text) < 6
+        {
+            showError("", "密码必须大于6位")
+            return
+        }
         var msgReq = IteasyNfclock.PkgUserAuthSetReq.builder()
         msgReq.phonenumber = self.phonenumberField.text
         msgReq.authtype = IteasyNfclock.EnAuthType.AuthTypeFindPassword
@@ -116,10 +120,8 @@ class FindPasswordViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserAuthSetReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                let successView  = self.storyboard?.instantiateViewControllerWithIdentifier("successview") as! SuccessViewController
-                successView.txtTitle = "找回密码成功"
-                successView.txtLabel = "找回密码成功!"
-                self.navigationController?.pushViewController(successView, animated: true)
+                showSuccess("", "找回密码成功")
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
             else{
                 showError("", msgReply.err)

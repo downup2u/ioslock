@@ -23,8 +23,9 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
         // Do any additional setup after loading the view.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLockCallback:", name: "onLockCallback", object: nil)
-        loaddata()
+       // loaddata()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onOwnerLockCallback:", name: "onOwnerLockCallback", object: nil)
+        
         
     }
     
@@ -32,15 +33,20 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func onLockCallback(notification: NSNotification){
+    func onOwnerLockCallback(notification: NSNotification){
         loaddata()
         
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        loaddata()
     }
     
     func loaddata(){
         self.ownerLockArray = GlobalSessionUser.shared.ownerLockArray
         self.otherLockArray = GlobalSessionUser.shared.otherLockArray
-        collectionView.reloadData()
+        self.collectionView.reloadData()
 
     }
 
@@ -60,6 +66,8 @@ class DoorManagementViewController: UIViewController,UICollectionViewDelegate,UI
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         var ilock = self.ownerLockArray.count
+        println("DoorManagementViewController collectionView:\(ilock)")
+
         return ilock + 1
     }
     

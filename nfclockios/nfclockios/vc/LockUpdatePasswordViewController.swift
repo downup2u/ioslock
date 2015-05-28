@@ -58,7 +58,11 @@ class LockUpdatePasswordViewController: UIViewController {
             showError("",NSLocalizedString("NewpasswordNotNull", comment:"新密码不能为空"))
             return
         }
-        
+        if count(self.fieldNewpassword.text) < 6
+        {
+            showError("", "密码必须大于6位")
+            return
+        }
         
         var msgReq = IteasyNfclock.PkgUpdateLockPasswordReq.builder()
         msgReq.lockuuid = curLock.lockuuid

@@ -16,6 +16,7 @@ class LockLogoffViewController: UIViewController {
     @IBOutlet weak var lockidField: UILabel!
     @IBOutlet weak var lockpwdField: UITextField!
     @IBOutlet weak var lockPositionField: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +35,30 @@ class LockLogoffViewController: UIViewController {
 //        
         addButtonCorner_OK(btnOK)
         // Do any additional setup after loading the view.
+        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
+        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    var keyboard:KeyboardManager!
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        keyboard.enableKeyboardManger()
+    }
     
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        keyboard.disableKeyboardManager()
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        keyboard.endEditing()
+    }
 
     /*
     // MARK: - Navigation

@@ -52,7 +52,11 @@ class MyInfoUpdatePasswordViewController: UIViewController {
             showError("",NSLocalizedString("NewpasswordNotNull", comment:"新密码不能为空"))
             return
         }
-        
+        if count(self.fieldNewpassword.text) < 6
+        {
+            showError("", "密码必须大于6位")
+            return
+        }
         
         var msgReq = IteasyNfclock.PkgUserModifyPasswordReq.builder()
         msgReq.useroldpassword = fieldOldpassword.text

@@ -35,8 +35,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
             }
             else if(viewController is DoorManagementViewController
             || viewController is DoorMyProfileViewController
-                || viewController is DoorOpenViewController
-                || viewController is SuccessViewController){
+                || viewController is DoorOpenViewController){
                 self.navigationBarHidden = false
                 viewController.navigationItem.leftBarButtonItem = nil
                // viewController.navigationItem.hidesBackButton = true

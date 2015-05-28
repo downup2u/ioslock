@@ -47,10 +47,15 @@ class GlobalSessionUser {
             self.otherLockArray.append(lockinfo)
         }
         
-        
+//        dispatch_async(dispatch_get_main_queue(), {
+//            println("onOwnerGetLocks:\(self.ownerLockArray.count),\(self.otherLockArray.count)")
+//            NSNotificationCenter.defaultCenter().postNotificationName("onOwnerLockCallback", object: nil)
+//        })
         dispatch_async(dispatch_get_main_queue(), {
+            println("onGetLocks:\(self.ownerLockArray.count),\(self.otherLockArray.count)")
             NSNotificationCenter.defaultCenter().postNotificationName("onLockCallback", object: nil)
         })
+
         
     }
     
@@ -76,14 +81,14 @@ class GlobalSessionUser {
             var deviceid = pwdlist.lockdeviceid
             var arraypwd = pwdlist.lockpasswordlist
             self.lockpasswordMap[deviceid] = arraypwd
-            println("onGetLockPassword:\(deviceid),\(arraypwd)")
+           // println("onGetLockPassword:\(deviceid),\(arraypwd)")
         }
 
     }
     
     func getCurtimePassword(deviceid:String,curtime:Moment) -> String{
         
-        println("getCurtimePassword:\(deviceid),curtime:\(curtime)")
+     //   println("getCurtimePassword:\(deviceid),curtime:\(curtime)")
         var password = ""
         if let arr = self.lockpasswordMap[deviceid] {
             if  arr.count > 1{

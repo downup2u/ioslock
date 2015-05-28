@@ -35,12 +35,18 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
         loaddata()
         
     }
+    override func viewDidAppear(animated: Bool)
+    {
+       loaddata()
+    }
     
     func loaddata(){
         self.ownerLockArray = GlobalSessionUser.shared.ownerLockArray
         self.otherLockArray = GlobalSessionUser.shared.otherLockArray
-        collectionView.reloadData()
-        
+        self.collectionView.reloadData()
+        println("loaddata DoorOpenViewController collectionView:\(self.ownerLockArray.count),\(self.otherLockArray.count),\(self.ownerLockArray)")
+
+      
     }
 
     @IBOutlet var collectionView: UICollectionView!
@@ -57,6 +63,7 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var ilock = self.ownerLockArray.count + self.otherLockArray.count
+        println("DoorOpenViewController collectionView:\(self.ownerLockArray.count),\(self.otherLockArray.count)")
         return ilock
     }
     
@@ -70,7 +77,7 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
             curLock = self.ownerLockArray[curIndex]
         }
         else{
-             collectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
+             collectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cellother", forIndexPath: indexPath) as! UICollectionViewCell
             curIndex = indexPath.row - self.ownerLockArray.count
             curLock = self.otherLockArray[curIndex]
             
@@ -184,7 +191,9 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
         let colNum: CGFloat = self.view.frame.size.width >= 300 ? 3.0 : 2.0
         
         let width: CGFloat = (self.view.frame.size.width - (1.0 + colNum)) / colNum
-        return CGSize(width: width, height: width)
+        var size = CGSize(width: width, height: width)
+        println("DoorOpenViewController collectionView:\(size)")
+        return size
     }
     
 }

@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // TSMessage.addCustomDesignFromFileWithName("AlternativeDesign.json")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSrvMessage:", name: "onSrvMessage", object: nil)
         // Override point for customization after application launch.
-        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.109:9002 --connectinterval=3 --autoconnect=true"
+        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.199:9002 --connectinterval=3 --autoconnect=true"
         OCWrap.initModule(sArgs)
-        println("application->current thread = \(NSThread.currentThread())");
+      //  println("application->current thread = \(NSThread.currentThread())");
         return true
     }
 
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        hexData.getBytes(&buffer, length:hexData.length)
         msgReply.mergeFromData(hexData)
        // println("msgHexData->current thread = \(NSThread.currentThread())");
-        println("msgHexData:\(msgHexData)")
+    //    println("msgHexData:\(msgHexData)")
 
         dispatch_sync(dispatch_get_main_queue(), {
             if msgReply.enmsgstatuscode == Comminternal.PkgMsg.EnMsgStatusCode.MsgStatusnone{
