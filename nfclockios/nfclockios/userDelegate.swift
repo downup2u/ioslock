@@ -11,3 +11,6 @@ import Foundation
 protocol UserChooseDelegate :class{
     func onUserChoosed(useruserlist:Array<String>)
 }
+protocol OfflineTimeChooseDelegate :class{
+    func onOfflineChoosed()
+}

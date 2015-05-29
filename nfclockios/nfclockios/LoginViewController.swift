@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
                     GlobalSessionUser.shared.phonenumber = msgReply.phonenumber
                     GlobalSessionUser.shared.idcardnumber = msgReply.idcardnumber
                     GlobalSessionUser.shared.registertime = msgReply.registertime
+                     GlobalSessionUser.shared.offlinetime = Int(msgReply.offlinetime)
                     GlobalSessionUser.shared.islogined = true
                     var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     appDel.setAppviewAsRootView()

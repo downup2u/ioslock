@@ -19,6 +19,7 @@ class GlobalSessionUser {
     }
     
     var srvDuration = Duration(value: 0)
+
     
     var ownerLockArray = [IteasyNfclock.db_lock()]
     var otherLockArray = [IteasyNfclock.db_lock()]
@@ -111,6 +112,7 @@ class GlobalSessionUser {
     var idcardnumber = ""
     var passwordsaved = ""
     var registertime = ""
+    var offlinetime = 5
    // var
     
 }

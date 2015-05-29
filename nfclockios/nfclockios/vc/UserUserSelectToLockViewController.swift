@@ -95,7 +95,7 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
         // 2.在标题视图中添加一个按钮
         var button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         // 添加标题按钮的监听方法
-        button.tag = section
+        button.layer.setValue(section, forKey: "sectionindex")
         button.addTarget(self, action: Selector("clickSectionDepartment:"), forControlEvents: UIControlEvents.TouchUpInside)
         button.setTranslatesAutoresizingMaskIntoConstraints(false)
         button.setImage(UIImage(named:"gx"), forState: UIControlState.Normal)
@@ -152,7 +152,7 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
     }
     func clickSectionDepartment(sender: UIButton){
         sender.selected = !sender.selected
-        var section = sender.tag as Int
+        var section = sender.layer.valueForKey("sectionindex") as! Int
         let array = self.sectionUsers[section]
         for(var i = 0;i < array.count ; i++ ){
             var path = NSIndexPath(forRow:i,inSection:0)

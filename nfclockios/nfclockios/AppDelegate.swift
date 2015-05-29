@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // TSMessage.addCustomDesignFromFileWithName("AlternativeDesign.json")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSrvMessage:", name: "onSrvMessage", object: nil)
         // Override point for customization after application launch.
-        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.199:9002 --connectinterval=3 --autoconnect=true"
+        var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.102:9002 --connectinterval=5 --autoconnect=true"
         OCWrap.initModule(sArgs)
       //  println("application->current thread = \(NSThread.currentThread())");
         return true
@@ -107,6 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 GlobalSessionUser.shared.idcardnumber = msgReply.idcardnumber
                                 GlobalSessionUser.shared.registertime = msgReply.registertime
                                 GlobalSessionUser.shared.islogined = true
+                                GlobalSessionUser.shared.offlinetime = Int(msgReply.offlinetime)
                             }
                         })
                     }

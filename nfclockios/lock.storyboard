@@ -1821,6 +1821,76 @@
             </objects>
             <point key="canvasLocation" x="3057" y="1621"/>
         </scene>
+        <!--我－》离网时间-->
+        <scene sceneID="oOH-hQ-hJ4">
+            <objects>
+                <viewController storyboardIdentifier="setofflinetime" title="离网时间" id="s4J-7s-red" userLabel="我－》离网时间" customClass="SetOfflineTimeViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDw-Aq-0hs"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFv-cL-DXl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c3v-j8-NTc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zDp-8h-XkM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Z2v-dQ-VAy">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z2v-dQ-VAy" id="TeM-ib-h4U">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sy-Ks-zVW">
+                                                    <rect key="frame" x="14" y="11" width="108" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="108" id="6Yh-wX-NkT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" tag="100" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE4-46-B5m">
+                                                    <rect key="frame" x="552" y="7" width="32" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="arw-Ll-Qy7"/>
+                                                        <constraint firstAttribute="width" constant="32" id="dLn-rv-XHB"/>
+                                                    </constraints>
+                                                    <state key="normal" image="gx">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="gx_03"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8Sy-Ks-zVW" firstAttribute="leading" secondItem="TeM-ib-h4U" secondAttribute="leadingMargin" constant="6" id="DIr-Xj-Nf6"/>
+                                                <constraint firstAttribute="centerY" secondItem="DE4-46-B5m" secondAttribute="centerY" id="P8g-za-q21"/>
+                                                <constraint firstAttribute="centerY" secondItem="8Sy-Ks-zVW" secondAttribute="centerY" id="pTG-0D-qiJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DE4-46-B5m" secondAttribute="trailing" constant="8" id="qZA-eh-TEF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QFv-cL-DXl" firstAttribute="top" secondItem="zDp-8h-XkM" secondAttribute="bottom" id="Huv-Im-kVv"/>
+                            <constraint firstItem="zDp-8h-XkM" firstAttribute="leading" secondItem="c3v-j8-NTc" secondAttribute="leading" id="ISS-nn-qLO"/>
+                            <constraint firstItem="zDp-8h-XkM" firstAttribute="top" secondItem="c3v-j8-NTc" secondAttribute="top" id="WPG-9B-eQN"/>
+                            <constraint firstAttribute="trailing" secondItem="zDp-8h-XkM" secondAttribute="trailing" id="xbx-W4-Zr5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="zDp-8h-XkM" id="Ru7-Gi-zb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjY-8e-TJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3030" y="1165"/>
+        </scene>
         <!--我－》更换手机号-->
         <scene sceneID="LL8-NB-nMh">
             <objects>

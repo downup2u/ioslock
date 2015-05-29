@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource,OfflineTimeChooseDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var btnExit: UIButton!
@@ -26,6 +26,10 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func onOfflineChoosed(){
+        self.tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -87,7 +91,7 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
                 cell = tableView.dequeueReusableCellWithIdentifier("cellNext", forIndexPath: indexPath) as! UITableViewCell
                 cell.imageView?.image  = UIImage(named: "zc_sm")!
                 cell.textLabel?.text = "离网时间"
-                var str = ""
+                var str = "\(GlobalSessionUser.shared.offlinetime)分钟"
                 var attribute = NSMutableAttributedString(string: str)
                 cell.detailTextLabel?.attributedText = attribute
             }
@@ -146,6 +150,13 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
                 var storyBoard = UIStoryboard(name:"lock",bundle:nil)
                 var dvc = storyBoard.instantiateViewControllerWithIdentifier("myprofilemember") as! MyProfileMemberManagerViewController
                 
+                self.navigationController?.pushViewController(dvc,animated: true)
+            }
+            if(indexPath.row == 1){
+                //离网时间
+//                var storyBoard = UIStoryboard(name:"lock",bundle:nil)
+                var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("setofflinetime") as! SetOfflineTimeViewController
+                dvc.delegate = self
                 self.navigationController?.pushViewController(dvc,animated: true)
             }
             

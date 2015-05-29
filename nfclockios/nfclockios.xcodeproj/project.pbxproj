@@ -53,6 +53,7 @@
 		5F1CF6C11AFA004D000A3A06 /* LockUpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1CF6C01AFA004D000A3A06 /* LockUpdatePasswordViewController.swift */; };
 		5F1CF6C31AFA0085000A3A06 /* UserUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1CF6C21AFA0085000A3A06 /* UserUserInfoViewController.swift */; };
 		5F21BA3A1ACE37A700CEDE1C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F21BA391ACE37A700CEDE1C /* Globals.swift */; };
+		5F3626EA1B16F84500E0CCF7 /* SetOfflineTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3626E91B16F84500E0CCF7 /* SetOfflineTimeViewController.swift */; };
 		5F3A23811B12C419006EADCB /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A237B1B12C419006EADCB /* TSBlurView.m */; };
 		5F3A23821B12C419006EADCB /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A237D1B12C419006EADCB /* TSMessage.m */; };
 		5F3A23831B12C419006EADCB /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A237F1B12C419006EADCB /* TSMessageView.m */; };
@@ -183,6 +184,7 @@
 		5F1CF6C01AFA004D000A3A06 /* LockUpdatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LockUpdatePasswordViewController.swift; path = vc/LockUpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		5F1CF6C21AFA0085000A3A06 /* UserUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserUserInfoViewController.swift; path = vc/UserUserInfoViewController.swift; sourceTree = "<group>"; };
 		5F21BA391ACE37A700CEDE1C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = nfclockios/Globals.swift; sourceTree = "<group>"; };
+		5F3626E91B16F84500E0CCF7 /* SetOfflineTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetOfflineTimeViewController.swift; path = vc/SetOfflineTimeViewController.swift; sourceTree = "<group>"; };
 		5F3A237A1B12C419006EADCB /* TSBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSBlurView.h; sourceTree = "<group>"; };
 		5F3A237B1B12C419006EADCB /* TSBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBlurView.m; sourceTree = "<group>"; };
 		5F3A237C1B12C419006EADCB /* TSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessage.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				5FD3980E1AF743BD0053FD73 /* MyInfoUpdatePasswordViewController.swift */,
 				5F1CF4901AF89A65000A3A06 /* ChangePhoneViewController.swift */,
 				5F1CF4931AF89A7C000A3A06 /* ChangeIDNumberViewController.swift */,
+				5F3626E91B16F84500E0CCF7 /* SetOfflineTimeViewController.swift */,
 			);
 			name = "我";
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				5FAC14481AE8D15600B372E2 /* MyUITabBarController.swift in Sources */,
 				5FD77A6B1AD365F9000E5453 /* MyProfileMemberManagerViewController.swift in Sources */,
 				5F7396711AD762A900001998 /* DoorOpenPopViewController.swift in Sources */,
+				5F3626EA1B16F84500E0CCF7 /* SetOfflineTimeViewController.swift in Sources */,
 				5F3A23821B12C419006EADCB /* TSMessage.m in Sources */,
 				5FD3980D1AF709950053FD73 /* SCLAlertView.swift in Sources */,
 				5F15ABBB1AC90D2300DAEA4C /* UIImage+Extension.swift in Sources */,

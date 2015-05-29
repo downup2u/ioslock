@@ -192,7 +192,7 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
         
         let width: CGFloat = (self.view.frame.size.width - (1.0 + colNum)) / colNum
         var size = CGSize(width: width, height: width)
-        println("DoorOpenViewController collectionView:\(size)")
+       // println("DoorOpenViewController collectionView:\(size)")
         return size
     }
     

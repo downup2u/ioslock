@@ -74,6 +74,7 @@ internal func == (lhs: IteasyNfclock.db_lock_user, rhs: IteasyNfclock.db_lock_us
   fieldCheck = fieldCheck && (lhs.hasTruename == rhs.hasTruename) && (!lhs.hasTruename || lhs.truename == rhs.truename)
   fieldCheck = fieldCheck && (lhs.hasIdcardnumber == rhs.hasIdcardnumber) && (!lhs.hasIdcardnumber || lhs.idcardnumber == rhs.idcardnumber)
   fieldCheck = fieldCheck && (lhs.hasRegistertime == rhs.hasRegistertime) && (!lhs.hasRegistertime || lhs.registertime == rhs.registertime)
+  fieldCheck = fieldCheck && (lhs.hasOfflinetime == rhs.hasOfflinetime) && (!lhs.hasOfflinetime || lhs.offlinetime == rhs.offlinetime)
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
@@ -1747,6 +1748,9 @@ internal extension IteasyNfclock {
     private(set) var hasRegistertime:Bool = false
     private(set) var registertime:String = ""
 
+    private(set) var hasOfflinetime:Bool = false
+    private(set) var offlinetime:Int32 = Int32(0)
+
     required internal init() {
          super.init()
     }
@@ -1774,6 +1778,9 @@ internal extension IteasyNfclock {
       }
       if hasRegistertime {
         output.writeString(8, value:registertime)
+      }
+      if hasOfflinetime {
+        output.writeInt32(9, value:offlinetime)
       }
       unknownFields.writeToCodedOutputStream(output)
     }
@@ -1804,6 +1811,9 @@ internal extension IteasyNfclock {
       }
       if hasRegistertime {
         serialize_size += registertime.computeStringSize(8)
+      }
+      if hasOfflinetime {
+        serialize_size += offlinetime.computeInt32Size(9)
       }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
@@ -1867,6 +1877,9 @@ internal extension IteasyNfclock {
       if hasRegistertime {
         output += "\(indent) registertime: \(registertime) \n"
       }
+      if hasOfflinetime {
+        output += "\(indent) offlinetime: \(offlinetime) \n"
+      }
       unknownFields.writeDescriptionTo(&output, indent:indent)
     }
     override internal var hashValue:Int {
@@ -1892,6 +1905,9 @@ internal extension IteasyNfclock {
             }
             if hasRegistertime {
                hashCode = (hashCode &* 31) &+ registertime.hashValue
+            }
+            if hasOfflinetime {
+               hashCode = (hashCode &* 31) &+ offlinetime.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -2082,6 +2098,29 @@ internal extension IteasyNfclock {
          builderResult.registertime = ""
          return self
     }
+    var hasOfflinetime:Bool {
+         get {
+              return builderResult.hasOfflinetime
+         }
+    }
+    var offlinetime:Int32 {
+         get {
+              return builderResult.offlinetime
+         }
+         set (value) {
+             builderResult.hasOfflinetime = true
+             builderResult.offlinetime = value
+         }
+    }
+    func setOfflinetime(value:Int32)-> IteasyNfclock.db_lock_userBuilder {
+      self.offlinetime = value
+      return self
+    }
+    internal func clearOfflinetime() -> IteasyNfclock.db_lock_userBuilder{
+         builderResult.hasOfflinetime = false
+         builderResult.offlinetime = Int32(0)
+         return self
+    }
     override internal var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -2127,6 +2166,9 @@ internal extension IteasyNfclock {
       if other.hasRegistertime {
            registertime = other.registertime
       }
+      if other.hasOfflinetime {
+           offlinetime = other.offlinetime
+      }
       mergeUnknownFields(other.unknownFields)
       return self
     }
@@ -2162,6 +2204,9 @@ internal extension IteasyNfclock {
 
         case 66 :
           registertime = input.readString()
+
+        case 72 :
+          offlinetime = input.readInt32()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {

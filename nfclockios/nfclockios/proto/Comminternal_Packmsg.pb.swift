@@ -35,6 +35,7 @@ internal func == (lhs: Comminternal.PkgSessionUser, rhs: Comminternal.PkgSession
   fieldCheck = fieldCheck && (lhs.hasUserlogonname == rhs.hasUserlogonname) && (!lhs.hasUserlogonname || lhs.userlogonname == rhs.userlogonname)
   fieldCheck = fieldCheck && (lhs.hasIslogined == rhs.hasIslogined) && (!lhs.hasIslogined || lhs.islogined == rhs.islogined)
   fieldCheck = fieldCheck && (lhs.hasIsadmin == rhs.hasIsadmin) && (!lhs.hasIsadmin || lhs.isadmin == rhs.isadmin)
+  fieldCheck = fieldCheck && (lhs.hasOfflinetime == rhs.hasOfflinetime) && (!lhs.hasOfflinetime || lhs.offlinetime == rhs.offlinetime)
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
@@ -807,6 +808,9 @@ internal extension Comminternal {
     private(set) var hasIsadmin:Bool = false
     private(set) var isadmin:Bool = false
 
+    private(set) var hasOfflinetime:Bool = false
+    private(set) var offlinetime:Int32 = Int32(5)
+
     required internal init() {
          super.init()
     }
@@ -825,6 +829,9 @@ internal extension Comminternal {
       }
       if hasIsadmin {
         output.writeBool(11, value:isadmin)
+      }
+      if hasOfflinetime {
+        output.writeInt32(12, value:offlinetime)
       }
       unknownFields.writeToCodedOutputStream(output)
     }
@@ -846,6 +853,9 @@ internal extension Comminternal {
       }
       if hasIsadmin {
         serialize_size += isadmin.computeBoolSize(11)
+      }
+      if hasOfflinetime {
+        serialize_size += offlinetime.computeInt32Size(12)
       }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
@@ -900,6 +910,9 @@ internal extension Comminternal {
       if hasIsadmin {
         output += "\(indent) isadmin: \(isadmin) \n"
       }
+      if hasOfflinetime {
+        output += "\(indent) offlinetime: \(offlinetime) \n"
+      }
       unknownFields.writeDescriptionTo(&output, indent:indent)
     }
     override internal var hashValue:Int {
@@ -916,6 +929,9 @@ internal extension Comminternal {
             }
             if hasIsadmin {
                hashCode = (hashCode &* 31) &+ isadmin.hashValue
+            }
+            if hasOfflinetime {
+               hashCode = (hashCode &* 31) &+ offlinetime.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -1037,6 +1053,29 @@ internal extension Comminternal {
          builderResult.isadmin = false
          return self
     }
+    var hasOfflinetime:Bool {
+         get {
+              return builderResult.hasOfflinetime
+         }
+    }
+    var offlinetime:Int32 {
+         get {
+              return builderResult.offlinetime
+         }
+         set (value) {
+             builderResult.hasOfflinetime = true
+             builderResult.offlinetime = value
+         }
+    }
+    func setOfflinetime(value:Int32)-> Comminternal.PkgSessionUserBuilder {
+      self.offlinetime = value
+      return self
+    }
+    internal func clearOfflinetime() -> Comminternal.PkgSessionUserBuilder{
+         builderResult.hasOfflinetime = false
+         builderResult.offlinetime = Int32(5)
+         return self
+    }
     override internal var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -1073,6 +1112,9 @@ internal extension Comminternal {
       if other.hasIsadmin {
            isadmin = other.isadmin
       }
+      if other.hasOfflinetime {
+           offlinetime = other.offlinetime
+      }
       mergeUnknownFields(other.unknownFields)
       return self
     }
@@ -1099,6 +1141,9 @@ internal extension Comminternal {
 
         case 88 :
           isadmin = input.readBool()
+
+        case 96 :
+          offlinetime = input.readInt32()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {
