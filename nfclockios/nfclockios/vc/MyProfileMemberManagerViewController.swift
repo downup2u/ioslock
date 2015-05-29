@@ -32,7 +32,8 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
        
         var btnOK = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnOK.frame = CGRectMake(0, 0, 32, 32);
-        btnOK.setBackgroundImage(UIImage(named: "sq_tj"), forState: UIControlState.Normal)
+        btnOK.setImage(UIImage(named:"sq_tj"), forState: UIControlState.Normal)
+        btnOK.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         btnOK.addTarget(self, action: "onClickAdd:", forControlEvents: UIControlEvents.TouchUpInside)
         var rightBarButtonItem = UIBarButtonItem(customView:btnOK)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem

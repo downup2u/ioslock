@@ -49,8 +49,9 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
                 
                 var btnBack = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
                 btnBack.frame = CGRectMake(0, 0, 32, 32);
-                btnBack.setBackgroundImage(UIImage(named: "jt"), forState: UIControlState.Normal)
-                btnBack.setBackgroundImage(UIImage(named: "jt_01"), forState: UIControlState.Selected)
+                btnBack.setImage(UIImage(named:"jt"), forState: UIControlState.Normal)
+                btnBack.setImage(UIImage(named:"jt_01"), forState: UIControlState.Selected)
+                btnBack.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
                 btnBack.addTarget(self, action: "onClickBack:", forControlEvents: UIControlEvents.TouchUpInside)
                 var leftBarButtonItem = UIBarButtonItem(customView:btnBack)
                 //  let leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_arrow_active"), style: .Plain, target: self, action: "onClickBack:")
