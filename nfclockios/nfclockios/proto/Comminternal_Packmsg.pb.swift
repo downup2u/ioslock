@@ -32,10 +32,9 @@ internal func == (lhs: Comminternal.PkgSessionUser, rhs: Comminternal.PkgSession
   }
   var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
   fieldCheck = fieldCheck && (lhs.hasUseruuid == rhs.hasUseruuid) && (!lhs.hasUseruuid || lhs.useruuid == rhs.useruuid)
-  fieldCheck = fieldCheck && (lhs.hasUserlogonname == rhs.hasUserlogonname) && (!lhs.hasUserlogonname || lhs.userlogonname == rhs.userlogonname)
+  fieldCheck = fieldCheck && (lhs.hasTruename == rhs.hasTruename) && (!lhs.hasTruename || lhs.truename == rhs.truename)
   fieldCheck = fieldCheck && (lhs.hasIslogined == rhs.hasIslogined) && (!lhs.hasIslogined || lhs.islogined == rhs.islogined)
   fieldCheck = fieldCheck && (lhs.hasIsadmin == rhs.hasIsadmin) && (!lhs.hasIsadmin || lhs.isadmin == rhs.isadmin)
-  fieldCheck = fieldCheck && (lhs.hasOfflinetime == rhs.hasOfflinetime) && (!lhs.hasOfflinetime || lhs.offlinetime == rhs.offlinetime)
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
@@ -799,17 +798,14 @@ internal extension Comminternal {
     private(set) var hasUseruuid:Bool = false
     private(set) var useruuid:String = ""
 
-    private(set) var hasUserlogonname:Bool = false
-    private(set) var userlogonname:String = ""
+    private(set) var hasTruename:Bool = false
+    private(set) var truename:String = ""
 
     private(set) var hasIslogined:Bool = false
     private(set) var islogined:Bool = false
 
     private(set) var hasIsadmin:Bool = false
     private(set) var isadmin:Bool = false
-
-    private(set) var hasOfflinetime:Bool = false
-    private(set) var offlinetime:Int32 = Int32(5)
 
     required internal init() {
          super.init()
@@ -821,17 +817,14 @@ internal extension Comminternal {
       if hasUseruuid {
         output.writeString(1, value:useruuid)
       }
-      if hasUserlogonname {
-        output.writeString(2, value:userlogonname)
+      if hasTruename {
+        output.writeString(2, value:truename)
       }
       if hasIslogined {
         output.writeBool(10, value:islogined)
       }
       if hasIsadmin {
         output.writeBool(11, value:isadmin)
-      }
-      if hasOfflinetime {
-        output.writeInt32(12, value:offlinetime)
       }
       unknownFields.writeToCodedOutputStream(output)
     }
@@ -845,17 +838,14 @@ internal extension Comminternal {
       if hasUseruuid {
         serialize_size += useruuid.computeStringSize(1)
       }
-      if hasUserlogonname {
-        serialize_size += userlogonname.computeStringSize(2)
+      if hasTruename {
+        serialize_size += truename.computeStringSize(2)
       }
       if hasIslogined {
         serialize_size += islogined.computeBoolSize(10)
       }
       if hasIsadmin {
         serialize_size += isadmin.computeBoolSize(11)
-      }
-      if hasOfflinetime {
-        serialize_size += offlinetime.computeInt32Size(12)
       }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
@@ -901,17 +891,14 @@ internal extension Comminternal {
       if hasUseruuid {
         output += "\(indent) useruuid: \(useruuid) \n"
       }
-      if hasUserlogonname {
-        output += "\(indent) userlogonname: \(userlogonname) \n"
+      if hasTruename {
+        output += "\(indent) truename: \(truename) \n"
       }
       if hasIslogined {
         output += "\(indent) islogined: \(islogined) \n"
       }
       if hasIsadmin {
         output += "\(indent) isadmin: \(isadmin) \n"
-      }
-      if hasOfflinetime {
-        output += "\(indent) offlinetime: \(offlinetime) \n"
       }
       unknownFields.writeDescriptionTo(&output, indent:indent)
     }
@@ -921,17 +908,14 @@ internal extension Comminternal {
             if hasUseruuid {
                hashCode = (hashCode &* 31) &+ useruuid.hashValue
             }
-            if hasUserlogonname {
-               hashCode = (hashCode &* 31) &+ userlogonname.hashValue
+            if hasTruename {
+               hashCode = (hashCode &* 31) &+ truename.hashValue
             }
             if hasIslogined {
                hashCode = (hashCode &* 31) &+ islogined.hashValue
             }
             if hasIsadmin {
                hashCode = (hashCode &* 31) &+ isadmin.hashValue
-            }
-            if hasOfflinetime {
-               hashCode = (hashCode &* 31) &+ offlinetime.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -984,27 +968,27 @@ internal extension Comminternal {
          builderResult.useruuid = ""
          return self
     }
-    var hasUserlogonname:Bool {
+    var hasTruename:Bool {
          get {
-              return builderResult.hasUserlogonname
+              return builderResult.hasTruename
          }
     }
-    var userlogonname:String {
+    var truename:String {
          get {
-              return builderResult.userlogonname
+              return builderResult.truename
          }
          set (value) {
-             builderResult.hasUserlogonname = true
-             builderResult.userlogonname = value
+             builderResult.hasTruename = true
+             builderResult.truename = value
          }
     }
-    func setUserlogonname(value:String)-> Comminternal.PkgSessionUserBuilder {
-      self.userlogonname = value
+    func setTruename(value:String)-> Comminternal.PkgSessionUserBuilder {
+      self.truename = value
       return self
     }
-    internal func clearUserlogonname() -> Comminternal.PkgSessionUserBuilder{
-         builderResult.hasUserlogonname = false
-         builderResult.userlogonname = ""
+    internal func clearTruename() -> Comminternal.PkgSessionUserBuilder{
+         builderResult.hasTruename = false
+         builderResult.truename = ""
          return self
     }
     var hasIslogined:Bool {
@@ -1053,29 +1037,6 @@ internal extension Comminternal {
          builderResult.isadmin = false
          return self
     }
-    var hasOfflinetime:Bool {
-         get {
-              return builderResult.hasOfflinetime
-         }
-    }
-    var offlinetime:Int32 {
-         get {
-              return builderResult.offlinetime
-         }
-         set (value) {
-             builderResult.hasOfflinetime = true
-             builderResult.offlinetime = value
-         }
-    }
-    func setOfflinetime(value:Int32)-> Comminternal.PkgSessionUserBuilder {
-      self.offlinetime = value
-      return self
-    }
-    internal func clearOfflinetime() -> Comminternal.PkgSessionUserBuilder{
-         builderResult.hasOfflinetime = false
-         builderResult.offlinetime = Int32(5)
-         return self
-    }
     override internal var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -1103,17 +1064,14 @@ internal extension Comminternal {
       if other.hasUseruuid {
            useruuid = other.useruuid
       }
-      if other.hasUserlogonname {
-           userlogonname = other.userlogonname
+      if other.hasTruename {
+           truename = other.truename
       }
       if other.hasIslogined {
            islogined = other.islogined
       }
       if other.hasIsadmin {
            isadmin = other.isadmin
-      }
-      if other.hasOfflinetime {
-           offlinetime = other.offlinetime
       }
       mergeUnknownFields(other.unknownFields)
       return self
@@ -1134,16 +1092,13 @@ internal extension Comminternal {
           useruuid = input.readString()
 
         case 18 :
-          userlogonname = input.readString()
+          truename = input.readString()
 
         case 80 :
           islogined = input.readBool()
 
         case 88 :
           isadmin = input.readBool()
-
-        case 96 :
-          offlinetime = input.readInt32()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {

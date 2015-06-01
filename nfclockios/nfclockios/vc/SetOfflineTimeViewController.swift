@@ -11,6 +11,7 @@ import UIKit
 class SetOfflineTimeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     var delegate:OfflineTimeChooseDelegate?
+    var defaultofflinetime = 5
     var array = [5,10,15,20]
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -49,7 +50,7 @@ class SetOfflineTimeViewController: UIViewController,UITableViewDataSource,UITab
         
         var l1 = cell.viewWithTag(101) as! UILabel
         var b1 = cell.viewWithTag(100) as! UIButton
-        b1.selected = (self.array[indexPath.row] == GlobalSessionUser.shared.offlinetime)
+        b1.selected = (self.array[indexPath.row] == defaultofflinetime)
         l1.text = "\(value)分钟"
         b1.layer.setValue(indexPath.row, forKey: "timeindex")
         b1.addTarget(self, action: "onSelItemClicked:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -88,21 +89,9 @@ class SetOfflineTimeViewController: UIViewController,UITableViewDataSource,UITab
     
 
     func onClickOK(sender: UIViewController) {
-        var msgReq = IteasyNfclock.PkgUserSetOfflineTimeReq.builder()
-        msgReq.offlinetime = Int32(self.array[curSel])
-        var msgReply = IteasyNfclock.PkgUserSetOfflineTimeReply.builder()
-        getLocalMsg(msgReq,msgReply,{
-            if(msgReply.issuccess){
-                GlobalSessionUser.shared.offlinetime = self.array[self.curSel]
-               showSuccess("","设置离网时间成功")
-               self.navigationController?.popViewControllerAnimated(true)
-               self.delegate?.onOfflineChoosed()
-            }
-            else{
-                showError("",msgReply.err)
-            }
-        })
-
+        self.delegate?.onOfflineChoosed(self.array[curSel])
+        
+     
     }
 
 }

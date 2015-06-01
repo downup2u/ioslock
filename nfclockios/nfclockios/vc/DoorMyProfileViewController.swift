@@ -28,7 +28,22 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
-    func onOfflineChoosed(){
+    func onOfflineChoosed(offlinetime:Int){
+        var msgReq = IteasyNfclock.PkgUserSetOfflineTimeReq.builder()
+        msgReq.offlinetime = Int32(offlinetime)
+        var msgReply = IteasyNfclock.PkgUserSetOfflineTimeReply.builder()
+        getLocalMsg(msgReq,msgReply,{
+            if(msgReply.issuccess){
+                GlobalSessionUser.shared.offlinetime = offlinetime
+                showSuccess("","设置默认离网时间成功")
+                self.navigationController?.popViewControllerAnimated(true)
+                
+            }
+            else{
+                showError("",msgReply.err)
+            }
+        })
+
         self.tableView.reloadData()
     }
     
@@ -156,6 +171,7 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
                 //离网时间
 //                var storyBoard = UIStoryboard(name:"lock",bundle:nil)
                 var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("setofflinetime") as! SetOfflineTimeViewController
+                dvc.defaultofflinetime = GlobalSessionUser.shared.offlinetime
                 dvc.delegate = self
                 self.navigationController?.pushViewController(dvc,animated: true)
             }

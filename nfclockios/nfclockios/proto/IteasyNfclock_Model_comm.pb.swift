@@ -367,6 +367,26 @@ internal func == (lhs: IteasyNfclock.PkgLockGetLockOpenrecordReply, rhs: IteasyN
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
+internal func == (lhs: IteasyNfclock.PkgLockSetOfflineTimeReq, rhs: IteasyNfclock.PkgLockSetOfflineTimeReq) -> Bool {
+  if (lhs === rhs) {
+    return true
+  }
+  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+  fieldCheck = fieldCheck && (lhs.hasLockuuid == rhs.hasLockuuid) && (!lhs.hasLockuuid || lhs.lockuuid == rhs.lockuuid)
+  fieldCheck = fieldCheck && (lhs.hasOfflinetime == rhs.hasOfflinetime) && (!lhs.hasOfflinetime || lhs.offlinetime == rhs.offlinetime)
+  return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+}
+
+internal func == (lhs: IteasyNfclock.PkgLockSetOfflineTimeReply, rhs: IteasyNfclock.PkgLockSetOfflineTimeReply) -> Bool {
+  if (lhs === rhs) {
+    return true
+  }
+  var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+  fieldCheck = fieldCheck && (lhs.hasIssuccess == rhs.hasIssuccess) && (!lhs.hasIssuccess || lhs.issuccess == rhs.issuccess)
+  fieldCheck = fieldCheck && (lhs.hasErr == rhs.hasErr) && (!lhs.hasErr || lhs.err == rhs.err)
+  return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+}
+
 internal func == (lhs: IteasyNfclock.PkgUserModifyPasswordReq, rhs: IteasyNfclock.PkgUserModifyPasswordReq) -> Bool {
   if (lhs === rhs) {
     return true
@@ -9374,6 +9394,465 @@ internal extension IteasyNfclock {
           var subBuilder = IteasyNfclock.db_lock_open_record.builder()
           input.readMessage(subBuilder,extensionRegistry:extensionRegistry)
           lockopenrecordlist += [subBuilder.buildPartial()]
+
+        default:
+          if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {
+             unknownFields = unknownFieldsBuilder.build()
+             return self
+          }
+        }
+      }
+    }
+  }
+
+  final internal class PkgLockSetOfflineTimeReq : GeneratedMessage, GeneratedMessageProtocol {
+    private(set) var hasLockuuid:Bool = false
+    private(set) var lockuuid:String = ""
+
+    private(set) var hasOfflinetime:Bool = false
+    private(set) var offlinetime:Int32 = Int32(0)
+
+    required internal init() {
+         super.init()
+    }
+    override internal func isInitialized() -> Bool {
+     return true
+    }
+    override internal func writeToCodedOutputStream(output:CodedOutputStream) {
+      if hasLockuuid {
+        output.writeString(1, value:lockuuid)
+      }
+      if hasOfflinetime {
+        output.writeInt32(2, value:offlinetime)
+      }
+      unknownFields.writeToCodedOutputStream(output)
+    }
+    override internal func serializedSize() -> Int32 {
+      var serialize_size:Int32 = memoizedSerializedSize
+      if serialize_size != -1 {
+       return serialize_size
+      }
+
+      serialize_size = 0
+      if hasLockuuid {
+        serialize_size += lockuuid.computeStringSize(1)
+      }
+      if hasOfflinetime {
+        serialize_size += offlinetime.computeInt32Size(2)
+      }
+      serialize_size += unknownFields.serializedSize()
+      memoizedSerializedSize = serialize_size
+      return serialize_size
+    }
+    internal class func parseFromData(data:NSData) -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromData(data, extensionRegistry:IteasyNfclock.ModelCommRoot.sharedInstance.extensionRegistry).build()
+    }
+    internal class func parseFromData(data:NSData, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromData(data, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func parseFromInputStream(input:NSInputStream) -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromInputStream(input).build()
+    }
+    internal class func parseFromInputStream(input:NSInputStream, extensionRegistry:ExtensionRegistry) ->IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromInputStream(input, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func parseFromCodedInputStream(input:CodedInputStream) -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromCodedInputStream(input).build()
+    }
+    internal class func parseFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFromCodedInputStream(input, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func builder() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.classBuilder() as! IteasyNfclock.PkgLockSetOfflineTimeReqBuilder
+    }
+    internal func builder() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      return classBuilder() as! IteasyNfclock.PkgLockSetOfflineTimeReqBuilder
+    }
+    internal override class func classBuilder() -> MessageBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReqBuilder()
+    }
+    internal override func classBuilder() -> MessageBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder()
+    }
+    internal func toBuilder() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builderWithPrototype(self)
+    }
+    internal class func builderWithPrototype(prototype:IteasyNfclock.PkgLockSetOfflineTimeReq) -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builder().mergeFrom(prototype)
+    }
+    override internal func writeDescriptionTo(inout output:String, indent:String) {
+      if hasLockuuid {
+        output += "\(indent) lockuuid: \(lockuuid) \n"
+      }
+      if hasOfflinetime {
+        output += "\(indent) offlinetime: \(offlinetime) \n"
+      }
+      unknownFields.writeDescriptionTo(&output, indent:indent)
+    }
+    override internal var hashValue:Int {
+        get {
+            var hashCode:Int = 7
+            if hasLockuuid {
+               hashCode = (hashCode &* 31) &+ lockuuid.hashValue
+            }
+            if hasOfflinetime {
+               hashCode = (hashCode &* 31) &+ offlinetime.hashValue
+            }
+            hashCode = (hashCode &* 31) &+  unknownFields.hashValue
+            return hashCode
+        }
+    }
+
+
+    //Meta information declaration start
+
+    override internal class func className() -> String {
+        return "IteasyNfclock.PkgLockSetOfflineTimeReq"
+    }
+    override internal func className() -> String {
+        return "IteasyNfclock.PkgLockSetOfflineTimeReq"
+    }
+    override internal func classMetaType() -> GeneratedMessage.Type {
+        return IteasyNfclock.PkgLockSetOfflineTimeReq.self
+    }
+    //Meta information declaration end
+
+  }
+
+  final internal class PkgLockSetOfflineTimeReqBuilder : GeneratedMessageBuilder {
+    private var builderResult:IteasyNfclock.PkgLockSetOfflineTimeReq
+
+    required override internal init () {
+       builderResult = IteasyNfclock.PkgLockSetOfflineTimeReq()
+       super.init()
+    }
+    var hasLockuuid:Bool {
+         get {
+              return builderResult.hasLockuuid
+         }
+    }
+    var lockuuid:String {
+         get {
+              return builderResult.lockuuid
+         }
+         set (value) {
+             builderResult.hasLockuuid = true
+             builderResult.lockuuid = value
+         }
+    }
+    func setLockuuid(value:String)-> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      self.lockuuid = value
+      return self
+    }
+    internal func clearLockuuid() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder{
+         builderResult.hasLockuuid = false
+         builderResult.lockuuid = ""
+         return self
+    }
+    var hasOfflinetime:Bool {
+         get {
+              return builderResult.hasOfflinetime
+         }
+    }
+    var offlinetime:Int32 {
+         get {
+              return builderResult.offlinetime
+         }
+         set (value) {
+             builderResult.hasOfflinetime = true
+             builderResult.offlinetime = value
+         }
+    }
+    func setOfflinetime(value:Int32)-> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      self.offlinetime = value
+      return self
+    }
+    internal func clearOfflinetime() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder{
+         builderResult.hasOfflinetime = false
+         builderResult.offlinetime = Int32(0)
+         return self
+    }
+    override internal var internalGetResult:GeneratedMessage {
+         get {
+            return builderResult
+         }
+    }
+    internal override func clear() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      builderResult = IteasyNfclock.PkgLockSetOfflineTimeReq()
+      return self
+    }
+    internal override func clone() -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReq.builderWithPrototype(builderResult)
+    }
+    internal override func build() -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+         checkInitialized()
+         return buildPartial()
+    }
+    internal func buildPartial() -> IteasyNfclock.PkgLockSetOfflineTimeReq {
+      var returnMe:IteasyNfclock.PkgLockSetOfflineTimeReq = builderResult
+      return returnMe
+    }
+    internal func mergeFrom(other:IteasyNfclock.PkgLockSetOfflineTimeReq) -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      if (other == IteasyNfclock.PkgLockSetOfflineTimeReq()) {
+       return self
+      }
+      if other.hasLockuuid {
+           lockuuid = other.lockuuid
+      }
+      if other.hasOfflinetime {
+           offlinetime = other.offlinetime
+      }
+      mergeUnknownFields(other.unknownFields)
+      return self
+    }
+    internal override func mergeFromCodedInputStream(input:CodedInputStream) ->IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+         return mergeFromCodedInputStream(input, extensionRegistry:ExtensionRegistry())
+    }
+    internal override func mergeFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReqBuilder {
+      var unknownFieldsBuilder:UnknownFieldSetBuilder = UnknownFieldSet.builderWithUnknownFields(self.unknownFields)
+      while (true) {
+        var tag = input.readTag()
+        switch tag {
+        case 0: 
+          self.unknownFields = unknownFieldsBuilder.build()
+          return self
+
+        case 10 :
+          lockuuid = input.readString()
+
+        case 16 :
+          offlinetime = input.readInt32()
+
+        default:
+          if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {
+             unknownFields = unknownFieldsBuilder.build()
+             return self
+          }
+        }
+      }
+    }
+  }
+
+  final internal class PkgLockSetOfflineTimeReply : GeneratedMessage, GeneratedMessageProtocol {
+    private(set) var hasIssuccess:Bool = false
+    private(set) var issuccess:Bool = true
+
+    private(set) var hasErr:Bool = false
+    private(set) var err:String = ""
+
+    required internal init() {
+         super.init()
+    }
+    override internal func isInitialized() -> Bool {
+      if !hasIssuccess {
+        return false
+      }
+     return true
+    }
+    override internal func writeToCodedOutputStream(output:CodedOutputStream) {
+      if hasIssuccess {
+        output.writeBool(1, value:issuccess)
+      }
+      if hasErr {
+        output.writeString(2, value:err)
+      }
+      unknownFields.writeToCodedOutputStream(output)
+    }
+    override internal func serializedSize() -> Int32 {
+      var serialize_size:Int32 = memoizedSerializedSize
+      if serialize_size != -1 {
+       return serialize_size
+      }
+
+      serialize_size = 0
+      if hasIssuccess {
+        serialize_size += issuccess.computeBoolSize(1)
+      }
+      if hasErr {
+        serialize_size += err.computeStringSize(2)
+      }
+      serialize_size += unknownFields.serializedSize()
+      memoizedSerializedSize = serialize_size
+      return serialize_size
+    }
+    internal class func parseFromData(data:NSData) -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromData(data, extensionRegistry:IteasyNfclock.ModelCommRoot.sharedInstance.extensionRegistry).build()
+    }
+    internal class func parseFromData(data:NSData, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromData(data, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func parseFromInputStream(input:NSInputStream) -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromInputStream(input).build()
+    }
+    internal class func parseFromInputStream(input:NSInputStream, extensionRegistry:ExtensionRegistry) ->IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromInputStream(input, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func parseFromCodedInputStream(input:CodedInputStream) -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromCodedInputStream(input).build()
+    }
+    internal class func parseFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFromCodedInputStream(input, extensionRegistry:extensionRegistry).build()
+    }
+    internal class func builder() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.classBuilder() as! IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder
+    }
+    internal func builder() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      return classBuilder() as! IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder
+    }
+    internal override class func classBuilder() -> MessageBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder()
+    }
+    internal override func classBuilder() -> MessageBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder()
+    }
+    internal func toBuilder() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builderWithPrototype(self)
+    }
+    internal class func builderWithPrototype(prototype:IteasyNfclock.PkgLockSetOfflineTimeReply) -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builder().mergeFrom(prototype)
+    }
+    override internal func writeDescriptionTo(inout output:String, indent:String) {
+      if hasIssuccess {
+        output += "\(indent) issuccess: \(issuccess) \n"
+      }
+      if hasErr {
+        output += "\(indent) err: \(err) \n"
+      }
+      unknownFields.writeDescriptionTo(&output, indent:indent)
+    }
+    override internal var hashValue:Int {
+        get {
+            var hashCode:Int = 7
+            if hasIssuccess {
+               hashCode = (hashCode &* 31) &+ issuccess.hashValue
+            }
+            if hasErr {
+               hashCode = (hashCode &* 31) &+ err.hashValue
+            }
+            hashCode = (hashCode &* 31) &+  unknownFields.hashValue
+            return hashCode
+        }
+    }
+
+
+    //Meta information declaration start
+
+    override internal class func className() -> String {
+        return "IteasyNfclock.PkgLockSetOfflineTimeReply"
+    }
+    override internal func className() -> String {
+        return "IteasyNfclock.PkgLockSetOfflineTimeReply"
+    }
+    override internal func classMetaType() -> GeneratedMessage.Type {
+        return IteasyNfclock.PkgLockSetOfflineTimeReply.self
+    }
+    //Meta information declaration end
+
+  }
+
+  final internal class PkgLockSetOfflineTimeReplyBuilder : GeneratedMessageBuilder {
+    private var builderResult:IteasyNfclock.PkgLockSetOfflineTimeReply
+
+    required override internal init () {
+       builderResult = IteasyNfclock.PkgLockSetOfflineTimeReply()
+       super.init()
+    }
+    var hasIssuccess:Bool {
+         get {
+              return builderResult.hasIssuccess
+         }
+    }
+    var issuccess:Bool {
+         get {
+              return builderResult.issuccess
+         }
+         set (value) {
+             builderResult.hasIssuccess = true
+             builderResult.issuccess = value
+         }
+    }
+    func setIssuccess(value:Bool)-> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      self.issuccess = value
+      return self
+    }
+    internal func clearIssuccess() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder{
+         builderResult.hasIssuccess = false
+         builderResult.issuccess = true
+         return self
+    }
+    var hasErr:Bool {
+         get {
+              return builderResult.hasErr
+         }
+    }
+    var err:String {
+         get {
+              return builderResult.err
+         }
+         set (value) {
+             builderResult.hasErr = true
+             builderResult.err = value
+         }
+    }
+    func setErr(value:String)-> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      self.err = value
+      return self
+    }
+    internal func clearErr() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder{
+         builderResult.hasErr = false
+         builderResult.err = ""
+         return self
+    }
+    override internal var internalGetResult:GeneratedMessage {
+         get {
+            return builderResult
+         }
+    }
+    internal override func clear() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      builderResult = IteasyNfclock.PkgLockSetOfflineTimeReply()
+      return self
+    }
+    internal override func clone() -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      return IteasyNfclock.PkgLockSetOfflineTimeReply.builderWithPrototype(builderResult)
+    }
+    internal override func build() -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+         checkInitialized()
+         return buildPartial()
+    }
+    internal func buildPartial() -> IteasyNfclock.PkgLockSetOfflineTimeReply {
+      var returnMe:IteasyNfclock.PkgLockSetOfflineTimeReply = builderResult
+      return returnMe
+    }
+    internal func mergeFrom(other:IteasyNfclock.PkgLockSetOfflineTimeReply) -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      if (other == IteasyNfclock.PkgLockSetOfflineTimeReply()) {
+       return self
+      }
+      if other.hasIssuccess {
+           issuccess = other.issuccess
+      }
+      if other.hasErr {
+           err = other.err
+      }
+      mergeUnknownFields(other.unknownFields)
+      return self
+    }
+    internal override func mergeFromCodedInputStream(input:CodedInputStream) ->IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+         return mergeFromCodedInputStream(input, extensionRegistry:ExtensionRegistry())
+    }
+    internal override func mergeFromCodedInputStream(input:CodedInputStream, extensionRegistry:ExtensionRegistry) -> IteasyNfclock.PkgLockSetOfflineTimeReplyBuilder {
+      var unknownFieldsBuilder:UnknownFieldSetBuilder = UnknownFieldSet.builderWithUnknownFields(self.unknownFields)
+      while (true) {
+        var tag = input.readTag()
+        switch tag {
+        case 0: 
+          self.unknownFields = unknownFieldsBuilder.build()
+          return self
+
+        case 8 :
+          issuccess = input.readBool()
+
+        case 18 :
+          err = input.readString()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {

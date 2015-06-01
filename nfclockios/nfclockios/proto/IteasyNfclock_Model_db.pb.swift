@@ -19,6 +19,7 @@ internal func == (lhs: IteasyNfclock.db_lock, rhs: IteasyNfclock.db_lock) -> Boo
   fieldCheck = fieldCheck && (lhs.hasLockpasswd == rhs.hasLockpasswd) && (!lhs.hasLockpasswd || lhs.lockpasswd == rhs.lockpasswd)
   fieldCheck = fieldCheck && (lhs.hasLockopencount == rhs.hasLockopencount) && (!lhs.hasLockopencount || lhs.lockopencount == rhs.lockopencount)
   fieldCheck = fieldCheck && (lhs.hasOwneruseruuid == rhs.hasOwneruseruuid) && (!lhs.hasOwneruseruuid || lhs.owneruseruuid == rhs.owneruseruuid)
+  fieldCheck = fieldCheck && (lhs.hasLockofflinetime == rhs.hasLockofflinetime) && (!lhs.hasLockofflinetime || lhs.lockofflinetime == rhs.lockofflinetime)
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
@@ -135,6 +136,9 @@ internal extension IteasyNfclock {
     private(set) var hasOwneruseruuid:Bool = false
     private(set) var owneruseruuid:String = ""
 
+    private(set) var hasLockofflinetime:Bool = false
+    private(set) var lockofflinetime:Int32 = Int32(0)
+
     required internal init() {
          super.init()
     }
@@ -165,6 +169,9 @@ internal extension IteasyNfclock {
       }
       if hasOwneruseruuid {
         output.writeString(8, value:owneruseruuid)
+      }
+      if hasLockofflinetime {
+        output.writeInt32(9, value:lockofflinetime)
       }
       unknownFields.writeToCodedOutputStream(output)
     }
@@ -198,6 +205,9 @@ internal extension IteasyNfclock {
       }
       if hasOwneruseruuid {
         serialize_size += owneruseruuid.computeStringSize(8)
+      }
+      if hasLockofflinetime {
+        serialize_size += lockofflinetime.computeInt32Size(9)
       }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
@@ -264,6 +274,9 @@ internal extension IteasyNfclock {
       if hasOwneruseruuid {
         output += "\(indent) owneruseruuid: \(owneruseruuid) \n"
       }
+      if hasLockofflinetime {
+        output += "\(indent) lockofflinetime: \(lockofflinetime) \n"
+      }
       unknownFields.writeDescriptionTo(&output, indent:indent)
     }
     override internal var hashValue:Int {
@@ -292,6 +305,9 @@ internal extension IteasyNfclock {
             }
             if hasOwneruseruuid {
                hashCode = (hashCode &* 31) &+ owneruseruuid.hashValue
+            }
+            if hasLockofflinetime {
+               hashCode = (hashCode &* 31) &+ lockofflinetime.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -505,6 +521,29 @@ internal extension IteasyNfclock {
          builderResult.owneruseruuid = ""
          return self
     }
+    var hasLockofflinetime:Bool {
+         get {
+              return builderResult.hasLockofflinetime
+         }
+    }
+    var lockofflinetime:Int32 {
+         get {
+              return builderResult.lockofflinetime
+         }
+         set (value) {
+             builderResult.hasLockofflinetime = true
+             builderResult.lockofflinetime = value
+         }
+    }
+    func setLockofflinetime(value:Int32)-> IteasyNfclock.db_lockBuilder {
+      self.lockofflinetime = value
+      return self
+    }
+    internal func clearLockofflinetime() -> IteasyNfclock.db_lockBuilder{
+         builderResult.hasLockofflinetime = false
+         builderResult.lockofflinetime = Int32(0)
+         return self
+    }
     override internal var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -553,6 +592,9 @@ internal extension IteasyNfclock {
       if other.hasOwneruseruuid {
            owneruseruuid = other.owneruseruuid
       }
+      if other.hasLockofflinetime {
+           lockofflinetime = other.lockofflinetime
+      }
       mergeUnknownFields(other.unknownFields)
       return self
     }
@@ -591,6 +633,9 @@ internal extension IteasyNfclock {
 
         case 66 :
           owneruseruuid = input.readString()
+
+        case 72 :
+          lockofflinetime = input.readInt32()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {

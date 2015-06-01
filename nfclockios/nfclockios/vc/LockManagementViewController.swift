@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LockManagementViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class LockManagementViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,OfflineTimeChooseDelegate {
 
     @IBOutlet weak var tableview: UITableView!
 
@@ -116,10 +116,21 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
                 l2.hidden = true
                 b1.hidden = false
                 b2.hidden = true
-                
-                b1.titleLabel?.text = "\(lockUserCount)"
+                b1.setTitle("\(lockUserCount)个", forState: UIControlState.Normal)
+                //b1.titleLabel?.text = "\(lockUserCount)"
                 celllock.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 b1.addTarget(self, action: "onGetUserUserNumberButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+            }
+            else if(indexPath.row == 3){
+                l1.text = "离网时间"
+                l2.hidden = true
+                b1.hidden = false
+                b2.hidden = true
+                
+                b1.setTitle("\(curLock.lockofflinetime)分钟", forState: UIControlState.Normal)
+               // b1.titleLabel?.text =
+                celllock.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                b1.addTarget(self, action: "onOfflineTimeClicked:", forControlEvents: UIControlEvents.TouchUpInside)
             }
             return celllock
         }
@@ -154,7 +165,7 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
 //    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if( section == 0){
-            return 3
+            return 4
         }
         return lockOpenrecordArray.count
     }
@@ -167,6 +178,34 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
         return 50
     }
     
+    @IBAction func onOfflineTimeClicked(sender: AnyObject) {
+        var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("setofflinetime") as! SetOfflineTimeViewController
+        dvc.defaultofflinetime = Int(curLock.lockofflinetime)
+        dvc.delegate = self
+        self.navigationController?.pushViewController(dvc,animated: true)
+    }
+    func onOfflineChoosed(offlinetime:Int){
+        var msgReq = IteasyNfclock.PkgLockSetOfflineTimeReq.builder()
+        msgReq.offlinetime = Int32(offlinetime)
+        msgReq.lockuuid = curLock.lockuuid
+        var msgReply = IteasyNfclock.PkgLockSetOfflineTimeReply.builder()
+        getLocalMsg(msgReq,msgReply,{
+            if(msgReply.issuccess){
+                showSuccess("", "设置锁离网时间成功")
+                self.navigationController?.popViewControllerAnimated(true)
+                
+            }
+            else{
+                showError("",msgReply.err)
+            }
+        })
+        var lockbuilder = IteasyNfclock.db_lockBuilder()
+        lockbuilder.mergeFrom(curLock)
+        lockbuilder.lockofflinetime = Int32(offlinetime)
+        curLock = lockbuilder.build()
+        self.tableview.reloadData()
+
+    }
     @IBAction func clickMoreOpenRecordDetail(sender: AnyObject) {
         var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("openrecorddetail") as! OpenRecordDetailViewController
         dvc.curLock = curLock
@@ -220,22 +259,7 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
                 //授权人信息
             }
         }
-//        var storyBoardTask = UIStoryboard(name:"Task",bundle:nil)
-//        var dvc = storyBoardTask.instantiateViewControllerWithIdentifier("taskDetail") as TaskDetailViewController
-//        //     var indexPath = sender as NSIndexPath
-//        var selsection = indexPath.section
-//        var selrow = indexPath.row
-//        switch(selsection){
-//        case 0:
-//            dvc.taskinfo = taskrecvArray[selrow]
-//        case 1:
-//            dvc.taskinfo = tasksendArray[selrow]
-//        default:
-//            println("err")
-//        }
-//        
-//        navigationController?.pushViewController(dvc,animated: true)
-        // self.performSegueWithIdentifier("coworkTaskViewTaskSegue", sender: indexPath)
+
     }
 
 }

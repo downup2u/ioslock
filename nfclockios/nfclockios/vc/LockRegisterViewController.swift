@@ -101,7 +101,7 @@ class LockRegisterViewController: UIViewController {
         var msgLock = IteasyNfclock.db_lock.builder()
         //msgLock.lockid
         msgLock.lockdeviceid = lockidField.text
-        //msgLock.lockname =
+        msgLock.lockofflinetime = Int32(GlobalSessionUser.shared.offlinetime)
         msgLock.lockpasswd = lockpwdField.text
         msgLock.lockposition = lockPositionField.text
         msgReq.lock = msgLock.build()
