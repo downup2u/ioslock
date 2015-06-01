@@ -25,7 +25,7 @@
         <!--登录首页-->
         <scene sceneID="BIj-kf-efY">
             <objects>
-                <viewController title="登录首页" id="ZyP-nk-UIe" customClass="LoginViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="登录首页" automaticallyAdjustsScrollViewInsets="NO" id="ZyP-nk-UIe" customClass="LoginViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KhJ-oY-zRq"/>
                         <viewControllerLayoutGuide type="bottom" id="sqH-a3-1mk"/>
@@ -207,7 +207,7 @@
         <!--注册-->
         <scene sceneID="3GF-uE-w2l">
             <objects>
-                <viewController title="注册" id="PjX-lA-hTz" customClass="RegisterViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="注册" automaticallyAdjustsScrollViewInsets="NO" id="PjX-lA-hTz" customClass="RegisterViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KE4-6L-LWk"/>
                         <viewControllerLayoutGuide type="bottom" id="71n-ly-w6u"/>
@@ -432,7 +432,7 @@
         <!--找回密码-->
         <scene sceneID="t33-Nv-V2p">
             <objects>
-                <viewController title="找回密码" id="2WF-UX-og1" customClass="FindPasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="找回密码" automaticallyAdjustsScrollViewInsets="NO" id="2WF-UX-og1" customClass="FindPasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eaH-23-vc9"/>
                         <viewControllerLayoutGuide type="bottom" id="e4m-5j-gPC"/>

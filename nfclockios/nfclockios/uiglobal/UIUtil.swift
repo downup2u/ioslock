@@ -14,7 +14,7 @@ func addPaddedLeftView(textField: UITextField, image: UIImage, imageH: UIImage) 
     // TODO: We should resize the raw image instead of programmatically scaling it.
     let scale: CGFloat = 1.0
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
-    imageView.frame = CGRectMake(0, 0, image.size.width * scale, textField.height)
+    imageView.frame = CGRectMake(0, 0, 20, textField.height)
     let padding: CGFloat = 10
     let paddingView = UIView(frame: CGRectMake(0, 0, imageView.bounds.width + padding , imageView.bounds.height - 1))
     imageView.center = paddingView.center

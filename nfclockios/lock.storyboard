@@ -609,7 +609,7 @@
         <!--新锁注册-->
         <scene sceneID="Lv5-HA-vu1">
             <objects>
-                <viewController storyboardIdentifier="lockaddview" hidesBottomBarWhenPushed="YES" id="1Zg-QJ-w3J" customClass="LockRegisterViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lockaddview" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="1Zg-QJ-w3J" customClass="LockRegisterViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SRx-Sv-dHX"/>
                         <viewControllerLayoutGuide type="bottom" id="RM9-eV-Lrw"/>
@@ -1047,7 +1047,7 @@
         <!--我－》修改密码-->
         <scene sceneID="J67-wF-CPN">
             <objects>
-                <viewController storyboardIdentifier="changepwd" title="修改密码" hidesBottomBarWhenPushed="YES" id="QC7-GG-N4S" userLabel="我－》修改密码" customClass="MyInfoUpdatePasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changepwd" title="修改密码" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="QC7-GG-N4S" userLabel="我－》修改密码" customClass="MyInfoUpdatePasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7yJ-Uj-qSq"/>
                         <viewControllerLayoutGuide type="bottom" id="kZx-b4-Qh6"/>
@@ -1154,7 +1154,7 @@
         <!--我－》授权人管理－》添加授权人-->
         <scene sceneID="tDI-Jj-Ha4">
             <objects>
-                <viewController storyboardIdentifier="dooruseradduser" title="添加授权人" id="A5O-no-g5G" userLabel="我－》授权人管理－》添加授权人" customClass="DoorUserAddUserViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dooruseradduser" title="添加授权人" automaticallyAdjustsScrollViewInsets="NO" id="A5O-no-g5G" userLabel="我－》授权人管理－》添加授权人" customClass="DoorUserAddUserViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCU-Eg-P3L"/>
                         <viewControllerLayoutGuide type="bottom" id="7sP-gr-Isq"/>
@@ -1268,7 +1268,7 @@
         <!--我－》身份证登记-->
         <scene sceneID="xpk-tN-K69">
             <objects>
-                <viewController storyboardIdentifier="changeidnumber" title="身份证登记" id="gME-hr-QiN" userLabel="我－》身份证登记" customClass="ChangeIDNumberViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changeidnumber" title="身份证登记" automaticallyAdjustsScrollViewInsets="NO" id="gME-hr-QiN" userLabel="我－》身份证登记" customClass="ChangeIDNumberViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="89s-RF-CLv"/>
                         <viewControllerLayoutGuide type="bottom" id="09F-K7-q5x"/>
@@ -1369,7 +1369,7 @@
         <!--门禁管理－》锁具管理－》注销锁具-->
         <scene sceneID="gGu-ww-uXk">
             <objects>
-                <viewController storyboardIdentifier="locklogoff" title="锁具注销" id="kA3-gH-fIo" userLabel="门禁管理－》锁具管理－》注销锁具" customClass="LockLogoffViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locklogoff" title="锁具注销" automaticallyAdjustsScrollViewInsets="NO" id="kA3-gH-fIo" userLabel="门禁管理－》锁具管理－》注销锁具" customClass="LockLogoffViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUX-0E-kFj"/>
                         <viewControllerLayoutGuide type="bottom" id="ydw-JH-KW3"/>
@@ -1422,44 +1422,44 @@
                                 <rect key="frame" x="32" y="225" width="552" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nG-jn-3WS">
-                                        <rect key="frame" x="115" y="3" width="421" height="45"/>
+                                        <rect key="frame" x="115" y="3" width="421" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STF-ig-BB2" userLabel="v21">
-                                        <rect key="frame" x="16" y="50" width="520" height="2"/>
+                                        <rect key="frame" x="16" y="49" width="520" height="2"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="QbV-Ca-cSP"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="锁具口令" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-0X-Qxc" userLabel="pf">
-                                        <rect key="frame" x="115" y="54" width="421" height="41"/>
+                                        <rect key="frame" x="115" y="53" width="421" height="40.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-0J-wyB" userLabel="v22">
-                                        <rect key="frame" x="16" y="99" width="520" height="2"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKK-0J-wyB" userLabel="v22">
+                                        <rect key="frame" x="16" y="97.5" width="520" height="2"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="7S7-bk-cHq"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMb-Vm-oU5">
-                                        <rect key="frame" x="115" y="101" width="421" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMb-Vm-oU5">
+                                        <rect key="frame" x="115" y="99" width="421" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="锁具口令:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-kb-drz">
-                                        <rect key="frame" x="16" y="64" width="91" height="21"/>
+                                        <rect key="frame" x="16" y="63" width="91" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="锁具位置：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-A0-rB8">
-                                        <rect key="frame" x="16" y="113" width="91" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="锁具位置：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aT-A0-rB8">
+                                        <rect key="frame" x="16" y="111" width="91" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="91" id="myv-D8-SEa"/>
                                         </constraints>
@@ -1468,7 +1468,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="锁具ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRm-Ij-b60">
-                                        <rect key="frame" x="16" y="15" width="91" height="21"/>
+                                        <rect key="frame" x="16" y="15" width="91" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="71" id="qm5-m7-sdx"/>
                                         </constraints>
@@ -1557,7 +1557,7 @@
         <!--门禁管理－》锁具管理－》修改锁具口令-->
         <scene sceneID="90l-IA-S5r">
             <objects>
-                <viewController storyboardIdentifier="lockupdatepassword" title="修改锁具口令" id="3VC-BL-VVc" userLabel="门禁管理－》锁具管理－》修改锁具口令" customClass="LockUpdatePasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lockupdatepassword" title="修改锁具口令" automaticallyAdjustsScrollViewInsets="NO" id="3VC-BL-VVc" userLabel="门禁管理－》锁具管理－》修改锁具口令" customClass="LockUpdatePasswordViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fTU-r1-GWQ"/>
                         <viewControllerLayoutGuide type="bottom" id="t5k-Su-MUX"/>
@@ -1898,7 +1898,7 @@
         <!--我－》更换手机号-->
         <scene sceneID="LL8-NB-nMh">
             <objects>
-                <viewController storyboardIdentifier="changephonenumber" title="更换手机号" hidesBottomBarWhenPushed="YES" id="quU-Vp-fq4" userLabel="我－》更换手机号" customClass="ChangePhoneViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changephonenumber" title="更换手机号" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="quU-Vp-fq4" userLabel="我－》更换手机号" customClass="ChangePhoneViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uAE-qZ-P3e"/>
                         <viewControllerLayoutGuide type="bottom" id="rZj-AR-13f"/>
