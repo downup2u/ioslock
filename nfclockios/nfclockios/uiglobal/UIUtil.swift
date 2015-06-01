@@ -13,7 +13,8 @@ func addPaddedLeftView(textField: UITextField, image: UIImage, imageH: UIImage) 
     let imageView = UIImageView(image: image,highlightedImage:imageH)
     // TODO: We should resize the raw image instead of programmatically scaling it.
     let scale: CGFloat = 1.0
-    imageView.frame = CGRectMake(0, 0, image.size.width * scale, image.size.height * scale)
+    imageView.contentMode = UIViewContentMode.ScaleAspectFit
+    imageView.frame = CGRectMake(0, 0, image.size.width * scale, textField.height)
     let padding: CGFloat = 10
     let paddingView = UIView(frame: CGRectMake(0, 0, imageView.bounds.width + padding , imageView.bounds.height - 1))
     imageView.center = paddingView.center
@@ -28,6 +29,7 @@ func addSecureTextSwitcher(textField: UITextField, image: UIImage, imageSel: UII
     // TODO: We should resize the raw image instead of programmatically scaling it.
     let scale: CGFloat = 1.0
     let button = UIButton(frame: CGRectMake(0, 0, width, 28))
+    button.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
     button.setImage(image, forState: UIControlState.Normal)
     button.setImage(imageSel, forState: UIControlState.Selected)
     let padding: CGFloat = 10
@@ -105,6 +107,7 @@ func addButtonCheckBox(btn:UIButton,imageNormal:UIImage,image2Selected:UIImage){
     btn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
     btn.imageEdgeInsets = UIEdgeInsetsMake(0.0 as CGFloat, lLeftInset, 0.0 as CGFloat, 0.0 as CGFloat)
     btn.titleEdgeInsets = UIEdgeInsetsMake(0.0 as CGFloat, (lLeftInset * 2), 0.0 as CGFloat, 0.0 as CGFloat)
+    btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
     btn.setImage(image2Selected, forState: UIControlState.Selected)
     btn.setImage(imageNormal, forState: UIControlState.Normal)
     btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
@@ -114,4 +117,5 @@ func addButtonCheckBox(btn:UIButton,imageNormal:UIImage,image2Selected:UIImage){
 func addButtonNewDot(btn:UIButton){
     btn.titleEdgeInsets = UIEdgeInsetsMake(0.0 as CGFloat, -btn.imageView!.width, 0.0 as CGFloat, btn.imageView!.width as CGFloat)
     btn.imageEdgeInsets = UIEdgeInsetsMake(0.0 as CGFloat, btn.titleLabel!.bounds.size.width, 0.0 as CGFloat, -btn.titleLabel!.bounds.size.width as CGFloat)
+    btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
 }
