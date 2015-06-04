@@ -23,16 +23,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部门" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5V-Fe-oSQ">
-                        <rect key="frame" x="224" y="8" width="80" height="16"/>
+                        <rect key="frame" x="222" y="8" width="60" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="xfM-u8-5Hz"/>
+                            <constraint firstAttribute="width" constant="60" id="xfM-u8-5Hz"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓我是" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy8-xD-bJz">
-                        <rect key="frame" x="144" y="8" width="80" height="16"/>
+                        <rect key="frame" x="144" y="8" width="78" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -45,23 +45,49 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvI-Sk-hl8">
+                        <rect key="frame" x="282" y="8" width="30" height="16.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="fDg-0y-wdg"/>
+                        </constraints>
+                        <state key="normal" image="cw_ts">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="onClickInfo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4nA-GW-lag"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qy8-xD-bJz" firstAttribute="height" secondItem="k5V-Fe-oSQ" secondAttribute="height" id="1jm-ps-9LF"/>
                     <constraint firstItem="7CD-SB-hPs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4cS-kG-KPb"/>
                     <constraint firstAttribute="bottomMargin" secondItem="7CD-SB-hPs" secondAttribute="bottom" id="6Y0-Fp-O2l"/>
+                    <constraint firstItem="nvI-Sk-hl8" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="I0p-hT-6GE"/>
                     <constraint firstItem="hAe-UN-dXY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="IEe-j7-zEx"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="k5V-Fe-oSQ" secondAttribute="trailing" constant="8" id="IaR-XZ-VW0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="k5V-Fe-oSQ" secondAttribute="trailing" constant="30" id="IaR-XZ-VW0"/>
                     <constraint firstItem="k5V-Fe-oSQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="KWu-Xc-L1U"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nvI-Sk-hl8" secondAttribute="bottom" id="NQv-Jp-8e8"/>
                     <constraint firstItem="7CD-SB-hPs" firstAttribute="leading" secondItem="hAe-UN-dXY" secondAttribute="trailing" constant="8" id="XkL-ej-EAr"/>
+                    <constraint firstItem="nvI-Sk-hl8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aHs-y9-WS4"/>
                     <constraint firstItem="k5V-Fe-oSQ" firstAttribute="leading" secondItem="qy8-xD-bJz" secondAttribute="trailing" id="hdQ-WM-W6B"/>
+                    <constraint firstItem="nvI-Sk-hl8" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pc5-Iy-cyp"/>
                     <constraint firstItem="qy8-xD-bJz" firstAttribute="leading" secondItem="7CD-SB-hPs" secondAttribute="trailing" id="qTf-7j-bRs"/>
+                    <constraint firstItem="nvI-Sk-hl8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qkv-dP-nph"/>
                     <constraint firstItem="qy8-xD-bJz" firstAttribute="height" secondItem="7CD-SB-hPs" secondAttribute="height" id="sCb-r0-vne"/>
                     <constraint firstAttribute="centerY" secondItem="hAe-UN-dXY" secondAttribute="centerY" id="sQo-5b-mEK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nvI-Sk-hl8" secondAttribute="trailing" id="t56-LT-aOB"/>
                     <constraint firstItem="qy8-xD-bJz" firstAttribute="centerY" secondItem="k5V-Fe-oSQ" secondAttribute="centerY" id="tSn-gK-eBI"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="NQv-Jp-8e8"/>
+                        <exclude reference="aHs-y9-WS4"/>
+                        <exclude reference="t56-LT-aOB"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnInfo" destination="nvI-Sk-hl8" id="pWR-cH-jHL"/>
                 <outlet property="imgStatus" destination="hAe-UN-dXY" id="nC6-54-a1F"/>
                 <outlet property="labelDepartment" destination="k5V-Fe-oSQ" id="wQO-Fl-qzG"/>
                 <outlet property="labelName" destination="qy8-xD-bJz" id="Mqs-j8-vbN"/>
@@ -71,6 +97,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="cw_ts" width="18" height="18"/>
         <image name="zt" width="21" height="20"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@ class useruserTableViewCell: SWTableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPhonenumber: UILabel!
     @IBOutlet weak var imgStatus: UIImageView!
+    @IBOutlet weak var btnInfo: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
     
@@ -31,6 +32,9 @@ class useruserTableViewCell: SWTableViewCell {
         
 
     }
+    @IBAction func onClickInfo(sender: AnyObject) {
+        showWarning("", pkgUserUser.infotxt)
+    }
     
     func setusers(){
         if let useruser = pkgUserUser.dbLockUserUser {
@@ -40,7 +44,12 @@ class useruserTableViewCell: SWTableViewCell {
         }
         
         var rightbtns = NSMutableArray()
-        
+        if pkgUserUser.infotxt == ""{
+            btnInfo.hidden = true
+        }
+        else{
+            btnInfo.hidden = false
+        }
         if pkgUserUser.userusertype == IteasyNfclock.EnUserUserType.UserUserTypeEmpty{
             //未注册，邀请
             imgStatus.image = UIImage(named:"No_zc")

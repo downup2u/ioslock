@@ -503,6 +503,7 @@ internal func == (lhs: IteasyNfclock.PkgUserUsers, rhs: IteasyNfclock.PkgUserUse
   var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
   fieldCheck = fieldCheck && (lhs.hasDbLockUserUser == rhs.hasDbLockUserUser) && (!lhs.hasDbLockUserUser || lhs.dbLockUserUser == rhs.dbLockUserUser)
   fieldCheck = fieldCheck && (lhs.hasUserusertype == rhs.hasUserusertype) && (!lhs.hasUserusertype || lhs.userusertype == rhs.userusertype)
+  fieldCheck = fieldCheck && (lhs.hasInfotxt == rhs.hasInfotxt) && (!lhs.hasInfotxt || lhs.infotxt == rhs.infotxt)
   return (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
 }
 
@@ -12330,6 +12331,9 @@ internal extension IteasyNfclock {
     private(set) var dbLockUserUser:IteasyNfclock.db_lock_user_user!
     private(set) var userusertype:IteasyNfclock.EnUserUserType = IteasyNfclock.EnUserUserType.UserUserTypeEmpty
     private(set) var hasUserusertype:Bool = false
+    private(set) var hasInfotxt:Bool = false
+    private(set) var infotxt:String = ""
+
     required internal init() {
          super.init()
     }
@@ -12342,6 +12346,9 @@ internal extension IteasyNfclock {
       }
       if hasUserusertype {
         output.writeEnum(2, value:userusertype.rawValue)
+      }
+      if hasInfotxt {
+        output.writeString(3, value:infotxt)
       }
       unknownFields.writeToCodedOutputStream(output)
     }
@@ -12359,6 +12366,9 @@ internal extension IteasyNfclock {
       }
       if (hasUserusertype) {
         serialize_size += userusertype.rawValue.computeEnumSize(2)
+      }
+      if hasInfotxt {
+        serialize_size += infotxt.computeStringSize(3)
       }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
@@ -12409,6 +12419,9 @@ internal extension IteasyNfclock {
       if (hasUserusertype) {
         output += "\(indent) userusertype: \(userusertype.rawValue)\n"
       }
+      if hasInfotxt {
+        output += "\(indent) infotxt: \(infotxt) \n"
+      }
       unknownFields.writeDescriptionTo(&output, indent:indent)
     }
     override internal var hashValue:Int {
@@ -12421,6 +12434,9 @@ internal extension IteasyNfclock {
             }
             if hasUserusertype {
                hashCode = (hashCode &* 31) &+ Int(userusertype.rawValue)
+            }
+            if hasInfotxt {
+               hashCode = (hashCode &* 31) &+ infotxt.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -12505,6 +12521,29 @@ internal extension IteasyNfclock {
          builderResult.userusertype = .UserUserTypeEmpty
          return self
       }
+    var hasInfotxt:Bool {
+         get {
+              return builderResult.hasInfotxt
+         }
+    }
+    var infotxt:String {
+         get {
+              return builderResult.infotxt
+         }
+         set (value) {
+             builderResult.hasInfotxt = true
+             builderResult.infotxt = value
+         }
+    }
+    func setInfotxt(value:String)-> IteasyNfclock.PkgUserUsersBuilder {
+      self.infotxt = value
+      return self
+    }
+    internal func clearInfotxt() -> IteasyNfclock.PkgUserUsersBuilder{
+         builderResult.hasInfotxt = false
+         builderResult.infotxt = ""
+         return self
+    }
     override internal var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -12534,6 +12573,9 @@ internal extension IteasyNfclock {
       }
       if other.hasUserusertype {
            userusertype = other.userusertype
+      }
+      if other.hasInfotxt {
+           infotxt = other.infotxt
       }
       mergeUnknownFields(other.unknownFields)
       return self
@@ -12565,6 +12607,9 @@ internal extension IteasyNfclock {
           } else {
                unknownFieldsBuilder.mergeVarintField(2, value:Int64(valueIntuserusertype))
           }
+
+        case 26 :
+          infotxt = input.readString()
 
         default:
           if (!parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:tag)) {
