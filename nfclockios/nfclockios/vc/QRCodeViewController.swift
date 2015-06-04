@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import AVFoundation
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    var delegate:ScanQRCodeDelegate?
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     let session = AVCaptureSession()
     var layer:AVCaptureVideoPreviewLayer?
@@ -81,21 +82,15 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             stringValue = metadataObject.stringValue
             
         }
+        else{
+            return
+        }
     
         self.session.stopRunning()
         println("code is \(stringValue)")
-    
-//        var alertView = UIAlertView()
-//        alertView.delegate=self
-//        alertView.title = "二维码"
-//        alertView.message = "扫到的二维码内容为:\(stringValue)"
-//        alertView.addButtonWithTitle("确认")
-//        alertView.show()
-//        var url = NSURL(string: stringValue!)
-//        let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//        let webVc = storyBoard.instantiateViewControllerWithIdentifier("webview") as WebViewViewController
-//        webVc.webStr = stringValue!
-//        self.navigationController?.pushViewController(webVc, animated: true)
+        self.delegate?.onScanedText(stringValue!)
+        self.navigationController?.popViewControllerAnimated(true)
+
         
     }
     

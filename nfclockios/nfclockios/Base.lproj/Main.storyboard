@@ -103,7 +103,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="tkd-DX-LKr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -225,7 +225,7 @@
                                             <constraint firstAttribute="height" constant="45" id="Tlb-Cz-V10"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqf-uq-drp" userLabel="v21">
                                         <rect key="frame" x="16" y="50" width="350" height="2"/>
@@ -237,7 +237,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhU-Jh-V4E" userLabel="pf">
                                         <rect key="frame" x="16" y="52" width="350" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lko-Pn-dZG" userLabel="v22">
                                         <rect key="frame" x="16" y="99" width="350" height="2"/>
@@ -261,7 +261,7 @@
                                             <constraint firstAttribute="height" constant="2" id="nmo-GK-TIL"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgz-Qk-rBk" userLabel="usr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgz-Qk-rBk" userLabel="usr">
                                         <rect key="frame" x="16" y="158" width="350" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -450,7 +450,7 @@
                                             <constraint firstAttribute="height" constant="45" id="Occ-2v-6Ud"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgI-XF-j2G" userLabel="v21">
                                         <rect key="frame" x="16" y="50" width="536" height="2"/>
@@ -462,7 +462,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-5T-5S5" userLabel="pf">
                                         <rect key="frame" x="16" y="52" width="536" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOV-R8-djm" userLabel="v22">
                                         <rect key="frame" x="16" y="97" width="536" height="2"/>

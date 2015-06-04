@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0188651B1FCF03001B2633 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0188641B1FCF03001B2633 /* line.png */; };
 		5F01CEDB1B046890003EA495 /* OpenRecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01CEDA1B046890003EA495 /* OpenRecordDetailViewController.swift */; };
 		5F03AE531B1EEF2F002ECDC9 /* boost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03AE511B1EEF2F002ECDC9 /* boost.a */; };
 		5F03AE541B1EEF2F002ECDC9 /* liblockios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03AE521B1EEF2F002ECDC9 /* liblockios.a */; };
@@ -126,6 +127,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F0188641B1FCF03001B2633 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		5F01CEDA1B046890003EA495 /* OpenRecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenRecordDetailViewController.swift; path = vc/OpenRecordDetailViewController.swift; sourceTree = "<group>"; };
 		5F03AE511B1EEF2F002ECDC9 /* boost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost.a; path = cpplib/boost.a; sourceTree = "<group>"; };
 		5F03AE521B1EEF2F002ECDC9 /* liblockios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblockios.a; path = cpplib/liblockios.a; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 		5F3A238C1B12DA7A006EADCB /* img */ = {
 			isa = PBXGroup;
 			children = (
+				5F0188641B1FCF03001B2633 /* line.png */,
 				5F3A238D1B12DA7A006EADCB /* NotificationBackgroundError.png */,
 				5F3A238E1B12DA7A006EADCB /* NotificationBackgroundError@2x.png */,
 				5F3A238F1B12DA7A006EADCB /* NotificationBackgroundErrorIcon.png */,
@@ -657,6 +660,7 @@
 				5F1B78011AC6836B00AF7827 /* Images.xcassets in Resources */,
 				5F3A239E1B12DA7A006EADCB /* NotificationBackgroundError@2x.png in Resources */,
 				5F3A23AC1B12DA7A006EADCB /* NotificationButtonBackground@2x.png in Resources */,
+				5F0188651B1FCF03001B2633 /* line.png in Resources */,
 				5FD785BD1B0EC3EA003AA482 /* Localizable.strings in Resources */,
 				5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */,
 				5F3A23A21B12DA7A006EADCB /* NotificationBackgroundMessage@2x.png in Resources */,

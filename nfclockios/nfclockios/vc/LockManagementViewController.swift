@@ -23,20 +23,16 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
 
         tableview.dataSource = self
         tableview.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
-        
+         
         labelLockDeviceid.text = curLock.lockdeviceid
+       
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
         loaddata()
     }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    func onDataCallback(notification: NSNotification){
-        println("onDataCallback->current thread = \(NSThread.currentThread())");
-      
-    }
+
     func loaddata(){
         var msgReq = IteasyNfclock.PkgLockGetLockInfoReq.builder()
         msgReq.lockuuid = self.curLock.lockuuid
