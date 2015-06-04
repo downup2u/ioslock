@@ -74,8 +74,10 @@ func getResultMsg(msgHexData:String,block:protobufMsgResponse){
 typealias protobufLocalMsgResponse = (Void) ->Void
 func getLocalMsg(msgReq:GeneratedMessageBuilder,msgReply:GeneratedMessageBuilder,block:protobufLocalMsgResponse){
     var cnamereq:String = msgReq.internalGetResult.classMetaType().className()
+    var cnamereply:String = msgReply.internalGetResult.classMetaType().className()
     
     cnamereq =  cnamereq.replace("IteasyNfclock",withString: "iteasy_nfclock")
+    cnamereply =  cnamereply.replace("IteasyNfclock",withString: "iteasy_nfclock")
 
     var sHex = getIntelMsgString(cnamereq,msgReq.internalGetResult)
     OCWrap.sendMessageWithHander(sHex,handler:{
@@ -83,12 +85,13 @@ func getLocalMsg(msgReq:GeneratedMessageBuilder,msgReply:GeneratedMessageBuilder
         var msgPkgReply = Comminternal.PkgMsg.builder()
         
         let hexData = hexStringToData(msgHexData)
-        println("msgPkgReply:\(hexData)")
         msgPkgReply.mergeFromData(hexData)
-        
+        println("\(msgPkgReply.resmsgtype),\(cnamereply)")
         if(msgPkgReply.msgtype == Comminternal.PkgMsg.EnMsgType.MsgRes){
             let hexData2 = hexStringToData(msgPkgReply.resmsgdata)
-            println("msgPkgReply.resmsgdata:\(hexData2)")
+
+            println("\(msgPkgReply.resmsgtype):\(hexData2)")
+           
             msgReply.mergeFromData(hexData2)
             dispatch_sync(dispatch_get_main_queue(), {
                 block()
