@@ -14,6 +14,9 @@ protocol UserChooseDelegate :class{
 protocol OfflineTimeChooseDelegate :class{
     func onOfflineChoosed(offlinetime:Int)
 }
+protocol ChangePhonumberDelegate :class{
+    func onPhonenumberChanged(phonenumber:String)
+}
 protocol ScanQRCodeDelegate :class{
     func onScanedText(txt:String)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource,OfflineTimeChooseDelegate {
+class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource,OfflineTimeChooseDelegate ,ChangePhonumberDelegate{
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var btnExit: UIButton!
@@ -142,12 +142,15 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
         // Pass the selected object to the new view controller.
     }
     */
+    func onPhonenumberChanged(phonenumber:String){
+        self.tableView.reloadData()
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if(indexPath.section == 0){
             if(indexPath.row == 0){//修改手机号码
                 var storyBoard = UIStoryboard(name:"lock",bundle:nil)
                 var dvc = storyBoard.instantiateViewControllerWithIdentifier("changephonenumber") as! ChangePhoneViewController
-                
+                dvc.delegate = self
                 self.navigationController?.pushViewController(dvc,animated: true)
             }
             else if(indexPath.row == 1)

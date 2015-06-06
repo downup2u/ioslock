@@ -12,7 +12,7 @@ class ChangePhoneViewController: UIViewController {
 
     var keyboard:KeyboardManager!
     
-    
+    var delegate: ChangePhonumberDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewLoginBk.layer.borderColor = UIColor.colorWithHex("#E5E5E5")?.CGColor
@@ -59,7 +59,10 @@ class ChangePhoneViewController: UIViewController {
         var msgReply = IteasyNfclock.PkgUserResetPhonenumberReply.builder()
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
-                
+                GlobalSessionUser.shared.phonenumber = self.fieldPhone.text
+                showSuccess("","重置手机号码成功")
+                self.delegate?.onPhonenumberChanged(GlobalSessionUser.shared.phonenumber)
+                self.navigationController?.popViewControllerAnimated(true)
             }
             else{
                 showError("",msgReply.err)
