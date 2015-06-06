@@ -91,6 +91,7 @@ class UserUserInfoViewController: UIViewController,UITableViewDataSource,UITable
     
     @IBAction func onClickAdd(sender: AnyObject) {
         let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("addlockuser") as! UserUserSelectToLockViewController
+        dvc.curlockuserSelArray = lockUserArray
         dvc.delegate = self
         self.navigationController?.pushViewController(dvc, animated: true)
     }

@@ -12,6 +12,8 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
 
     var delegate:UserChooseDelegate?
     var sectionUsers = Array<Array<IteasyNfclock.db_lock_user_user>>()
+    var curlockuserSelArray = [IteasyNfclock.db_lock_user_user()]
+    
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +71,8 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // if(indexPath.section == 0){
-        
         var cellUsr : AnyObject! = tableView.dequeueReusableCellWithIdentifier("cell")
         var useruser = self.sectionUsers[indexPath.section][indexPath.row]
-      //  let useruser = GlobalSessionUser.shared.userSelArray[indexPath.row]
         
         var l1 = cellUsr.viewWithTag(101) as! UILabel
         var l2 = cellUsr.viewWithTag(102) as! UILabel
@@ -82,13 +81,20 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
         l1.text = useruser.truename
         l2.text = useruser.departmentname
         
+        b1.selected = isUserSelected(useruser)
         b1.addTarget(self, action: "onSelItemClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         
         
         return cellUsr as! UITableViewCell
-        //  }
         
-        
+    }
+    func isUserSelected(useruser:IteasyNfclock.db_lock_user_user)->Bool{
+        for usrusr in self.curlockuserSelArray{
+            if(useruser.uuid == usrusr.uuid){
+                return true
+            }
+        }
+        return false
     }
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -155,7 +161,7 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
         var section = sender.layer.valueForKey("sectionindex") as! Int
         let array = self.sectionUsers[section]
         for(var i = 0;i < array.count ; i++ ){
-            var path = NSIndexPath(forRow:i,inSection:0)
+            var path = NSIndexPath(forRow:i,inSection:section)
             if let cell = tableview.cellForRowAtIndexPath(path){
                 var b1 = cell.viewWithTag(100) as! UIButton
                 b1.selected = sender.selected
@@ -166,14 +172,18 @@ class UserUserSelectToLockViewController: UIViewController,UITableViewDataSource
     func onClickOK(sender: UIViewController) {
         
         var useruserlist = Array<String>()
-        for(var i = 0;i < GlobalSessionUser.shared.userSelArray.count ; i++ ){
-            var path = NSIndexPath(forRow:i,inSection:0)
-            if let cell = tableview.cellForRowAtIndexPath(path){
-                var b1 = cell.viewWithTag(100) as! UIButton
-                if(b1.selected){
-                    useruserlist.append(GlobalSessionUser.shared.userSelArray[i].relateduseruuid)
+        for(var i = 0;i < sectionUsers.count ; i++ ){
+            let arrayuseruser = sectionUsers[i]
+            for(var j = 0; j < arrayuseruser.count ; j++){
+                var path = NSIndexPath(forRow:j,inSection:i)
+                if let cell = tableview.cellForRowAtIndexPath(path){
+                    var b1 = cell.viewWithTag(100) as! UIButton
+                    if(b1.selected){
+                        useruserlist.append(arrayuseruser[j].relateduseruuid)
+                    }
                 }
             }
+
         }
         
         if(useruserlist.count > 0){
