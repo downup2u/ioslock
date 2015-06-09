@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LockManagementViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,OfflineTimeChooseDelegate {
+class LockManagementViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,OfflineTimeChooseDelegate,UpdateLockPasswordDelegate {
 
     @IBOutlet weak var tableview: UITableView!
 
@@ -61,6 +61,7 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
         var storyBoardTask = UIStoryboard(name:"lock",bundle:nil)
         var dvc = storyBoardTask.instantiateViewControllerWithIdentifier("lockupdatepassword") as! LockUpdatePasswordViewController
         dvc.curLock = curLock
+        dvc.delegate = self
         navigationController?.pushViewController(dvc,animated: true)
     }
     
@@ -180,6 +181,14 @@ class LockManagementViewController: UIViewController,UITableViewDataSource,UITab
         dvc.delegate = self
         self.navigationController?.pushViewController(dvc,animated: true)
     }
+    
+    func onUpdateLockPassword(txt:String){
+        var lockbuilder = IteasyNfclock.db_lockBuilder()
+        lockbuilder.mergeFrom(curLock)
+        lockbuilder.lockpasswd = txt
+        curLock = lockbuilder.build()
+    }
+    
     func onOfflineChoosed(offlinetime:Int){
         var msgReq = IteasyNfclock.PkgLockSetOfflineTimeReq.builder()
         msgReq.offlinetime = Int32(offlinetime)

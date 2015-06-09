@@ -10,6 +10,7 @@ import UIKit
 
 class LockUpdatePasswordViewController: UIViewController {
 
+    var delegate:UpdateLockPasswordDelegate?
     
     var keyboard:KeyboardManager!
     var curLock = IteasyNfclock.db_lock()
@@ -72,6 +73,7 @@ class LockUpdatePasswordViewController: UIViewController {
         getLocalMsg(msgReq,msgReply,{
             if(msgReply.issuccess){
                 showSuccess("","修改成功")
+                self.delegate?.onUpdateLockPassword(self.fieldNewpassword.text)
                 self.navigationController?.popViewControllerAnimated(true)
              }
             else{

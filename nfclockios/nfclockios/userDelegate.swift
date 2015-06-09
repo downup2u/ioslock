@@ -20,3 +20,6 @@ protocol ChangePhonumberDelegate :class{
 protocol ScanQRCodeDelegate :class{
     func onScanedText(txt:String)
 }
+protocol UpdateLockPasswordDelegate :class{
+    func onUpdateLockPassword(txt:String)
+}

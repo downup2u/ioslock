@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController {
         addPaddedLeftView(self.phonenumberField,UIImage(named: "sj")!,UIImage(named: "sj_02")!)
         addPaddedLeftView(self.authcodeField,UIImage(named: "dx")!,UIImage(named: "dx_02")!)
         addPaddedLeftView(self.passwordField,UIImage(named: "mima")!,UIImage(named: "mima_02")!)
-        addPaddedLeftView(self.userField,UIImage(named: "mima")!,UIImage(named: "mima_02")!)
+        addPaddedLeftView(self.userField,UIImage(named: "xm")!,UIImage(named: "xm")!)
 
         addButtonCorner_OK(btnOK)
         let revealButton = addSecureTextSwitcher(self.authcodeField!,UIImage(named: "yzm")!,UIImage(named: "yzm_02")!,80)

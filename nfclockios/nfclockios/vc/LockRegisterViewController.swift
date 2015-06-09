@@ -97,7 +97,11 @@ class LockRegisterViewController: UIViewController,ScanQRCodeDelegate {
             showError("",NSLocalizedString("LockPositonNotNull", comment:"锁位置不能为空"))
             return
         }
-        
+        if count(self.lockpwdField.text) < 6
+        {
+            showError("", "锁密码必须大于6位")
+            return
+        }
         
         var msgReq = IteasyNfclock.PkgLockAddReq.builder()
         var msgLock = IteasyNfclock.db_lock.builder()
