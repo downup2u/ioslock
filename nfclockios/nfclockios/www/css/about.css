@@ -1,0 +1,23 @@
+
+body{
+	padding:0px;
+	margin:0px;
+}
+
+div{
+	width:inherit;
+	padding:10px;
+}
+
+div.content{
+    text-indent:30px;
+}
+
+.center{
+	text-align:center;
+}
+
+p{
+	font-family: SimSun,SimHei,Verdana, Geneva, sans-serif;
+	font-size:14px;
+}

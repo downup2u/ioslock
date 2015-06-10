@@ -98,6 +98,8 @@
 		5F6B2D9E1ACD108C00AE8A21 /* LockRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B2D9D1ACD108C00AE8A21 /* LockRegisterViewController.swift */; };
 		5F7396711AD762A900001998 /* DoorOpenPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7396701AD762A900001998 /* DoorOpenPopViewController.swift */; };
 		5F7993671AFB2266006FBE71 /* UserUserSelectToLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7993661AFB2266006FBE71 /* UserUserSelectToLockViewController.swift */; };
+		5FA8E12F1B282ACB00156D7C /* www in Resources */ = {isa = PBXBuildFile; fileRef = 5FA8E12E1B282ACB00156D7C /* www */; };
+		5FA8E1311B282B0200156D7C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8E1301B282B0200156D7C /* AboutViewController.swift */; };
 		5FAC14031AE890F100B372E2 /* OCWrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC14021AE890F100B372E2 /* OCWrap.mm */; };
 		5FAC142D1AE8B64500B372E2 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC142C1AE8B64500B372E2 /* RootNavigationViewController.swift */; };
 		5FAC14481AE8D15600B372E2 /* MyUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC14471AE8D15600B372E2 /* MyUITabBarController.swift */; };
@@ -234,6 +236,8 @@
 		5F6B2D9D1ACD108C00AE8A21 /* LockRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LockRegisterViewController.swift; path = vc/LockRegisterViewController.swift; sourceTree = "<group>"; };
 		5F7396701AD762A900001998 /* DoorOpenPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorOpenPopViewController.swift; path = vc/DoorOpenPopViewController.swift; sourceTree = "<group>"; };
 		5F7993661AFB2266006FBE71 /* UserUserSelectToLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserUserSelectToLockViewController.swift; path = vc/UserUserSelectToLockViewController.swift; sourceTree = "<group>"; };
+		5FA8E12E1B282ACB00156D7C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		5FA8E1301B282B0200156D7C /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = vc/AboutViewController.swift; sourceTree = "<group>"; };
 		5FAC13FF1AE890F100B372E2 /* cppwrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cppwrap.h; sourceTree = "<group>"; };
 		5FAC14001AE890F100B372E2 /* NFCLock-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NFCLock-Bridging-Header.h"; sourceTree = "<group>"; };
 		5FAC14011AE890F100B372E2 /* OCWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCWrap.h; sourceTree = "<group>"; };
@@ -402,6 +406,7 @@
 		5F1B77F61AC6836B00AF7827 /* nfclockios */ = {
 			isa = PBXGroup;
 			children = (
+				5FA8E12E1B282ACB00156D7C /* www */,
 				5F1CF4791AF84D28000A3A06 /* swiftmoment */,
 				5FE32C201AE78F84006A2AAC /* Default-568h@2x.png */,
 				5FE32C211AE78F84006A2AAC /* Default@2x.png */,
@@ -528,6 +533,7 @@
 				5F1CF4901AF89A65000A3A06 /* ChangePhoneViewController.swift */,
 				5F1CF4931AF89A7C000A3A06 /* ChangeIDNumberViewController.swift */,
 				5F3626E91B16F84500E0CCF7 /* SetOfflineTimeViewController.swift */,
+				5FA8E1301B282B0200156D7C /* AboutViewController.swift */,
 			);
 			name = "我";
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				5F1B78011AC6836B00AF7827 /* Images.xcassets in Resources */,
 				5F3A239E1B12DA7A006EADCB /* NotificationBackgroundError@2x.png in Resources */,
 				5F3A23AC1B12DA7A006EADCB /* NotificationButtonBackground@2x.png in Resources */,
+				5FA8E12F1B282ACB00156D7C /* www in Resources */,
 				5F0188651B1FCF03001B2633 /* line.png in Resources */,
 				5FD785BD1B0EC3EA003AA482 /* Localizable.strings in Resources */,
 				5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */,
@@ -714,6 +721,7 @@
 				5F432CF71AFEDA50008E45A5 /* SWTableViewCell.m in Sources */,
 				5F15ABA51AC90A2600DAEA4C /* ExtendableMessage.swift in Sources */,
 				5FD3980A1AF6F6440053FD73 /* IteasyNfclock_Model_comm.pb.swift in Sources */,
+				5FA8E1311B282B0200156D7C /* AboutViewController.swift in Sources */,
 				5F15ABAC1AC90A2600DAEA4C /* WireFormat.swift in Sources */,
 				5F1CF4831AF84D28000A3A06 /* TimeUnit.swift in Sources */,
 				5F15ABB91AC90CEB00DAEA4C /* UIColor+Extension.swift in Sources */,

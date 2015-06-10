@@ -1825,6 +1825,39 @@
             </objects>
             <point key="canvasLocation" x="3057" y="1621"/>
         </scene>
+        <!--关于-->
+        <scene sceneID="RTT-eO-iSu">
+            <objects>
+                <viewController storyboardIdentifier="aboutview" title="关于" hidesBottomBarWhenPushed="YES" id="jhu-dK-kmc" customClass="AboutViewController" customModule="nfclockios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DEd-nj-H5F"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hgv-LE-OGR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cfw-fX-ebI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b90-jL-DKD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hgv-LE-OGR" firstAttribute="top" secondItem="b90-jL-DKD" secondAttribute="bottom" id="QH5-Q8-t5b"/>
+                            <constraint firstItem="b90-jL-DKD" firstAttribute="top" secondItem="Cfw-fX-ebI" secondAttribute="top" id="SGW-kb-xes"/>
+                            <constraint firstItem="b90-jL-DKD" firstAttribute="leading" secondItem="Cfw-fX-ebI" secondAttribute="leading" id="aoD-Rc-F3a"/>
+                            <constraint firstAttribute="trailing" secondItem="b90-jL-DKD" secondAttribute="trailing" id="x8y-oc-HCh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="b90-jL-DKD" id="jQp-CK-S1H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbz-38-0dE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851" y="2315"/>
+        </scene>
         <!--我－》离网时间-->
         <scene sceneID="oOH-hQ-hJ4">
             <objects>
@@ -1893,7 +1926,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjY-8e-TJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="1165"/>
+            <point key="canvasLocation" x="3344" y="789"/>
         </scene>
         <!--我－》更换手机号-->
         <scene sceneID="LL8-NB-nMh">
