@@ -21,3 +21,5 @@ p{
 	font-family: SimSun,SimHei,Verdana, Geneva, sans-serif;
 	font-size:14px;
 }
+
+.footer{height:50px;position:absolute;bottom:0px;left:0px;} 

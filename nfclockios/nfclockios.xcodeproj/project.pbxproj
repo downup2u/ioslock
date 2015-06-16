@@ -925,7 +925,7 @@
 					"$(PROJECT_DIR)/cpplib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bf13c097-6020-426c-90db-8c6bdb37d8e6";
+				PROVISIONING_PROFILE = "a119a3c2-4f03-46f1-8d82-50771e72270b";
 				SWIFT_OBJC_BRIDGING_HEADER = "nfclockios/ioscpp/NFCLock-Bridging-Header.h";
 			};
 			name = Debug;
@@ -950,7 +950,7 @@
 					"$(PROJECT_DIR)/cpplib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bf13c097-6020-426c-90db-8c6bdb37d8e6";
+				PROVISIONING_PROFILE = "a119a3c2-4f03-46f1-8d82-50771e72270b";
 				SWIFT_OBJC_BRIDGING_HEADER = "nfclockios/ioscpp/NFCLock-Bridging-Header.h";
 			};
 			name = Release;

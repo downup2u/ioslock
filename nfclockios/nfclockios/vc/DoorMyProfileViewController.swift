@@ -181,10 +181,11 @@ class DoorMyProfileViewController: UIViewController , UITableViewDelegate, UITab
             
         }
         else if(indexPath.section == 2){
-            
-            var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("aboutview") as! AboutViewController
-            self.navigationController?.pushViewController(dvc,animated: true)
-            //关于
+            if(indexPath.row == 0){//
+                var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("aboutview") as! AboutViewController
+                self.navigationController?.pushViewController(dvc,animated: true)
+                //关于
+            }
         }
         
     }
