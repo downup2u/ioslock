@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LockRegisterViewController: UIViewController,ScanQRCodeDelegate {
+class LockRegisterViewController: UIViewController {
 
     var keyboard:KeyboardManager!
     @IBOutlet weak var viewLoginBk: UIView!    
@@ -73,13 +73,13 @@ class LockRegisterViewController: UIViewController,ScanQRCodeDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func onScanedText(txt:String){
+    func onScanedText(txt:String!){
         self.lockidField.text = txt
     }
     @IBAction func onClickScanQR(sender: AnyObject) {
         var storyBoardTask = UIStoryboard(name:"lock",bundle:nil)
         var dvc = storyBoardTask.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
-        dvc.delegate = self
+        dvc.delegate = self.onScanedText
         self.navigationController?.pushViewController(dvc,animated: true)
     }
     @IBAction func onClickOK(sender: AnyObject) {

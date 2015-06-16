@@ -104,6 +104,7 @@
 		5FAC142D1AE8B64500B372E2 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC142C1AE8B64500B372E2 /* RootNavigationViewController.swift */; };
 		5FAC14481AE8D15600B372E2 /* MyUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC14471AE8D15600B372E2 /* MyUITabBarController.swift */; };
 		5FAC144A1AE8DD4100B372E2 /* GlobalSessionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC14491AE8DD4100B372E2 /* GlobalSessionUser.swift */; };
+		5FB3ABBB1B301E20005DA1EB /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB3ABBA1B301E20005DA1EB /* empty.png */; };
 		5FBCD3BD1AFC35B800FF1D0A /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCD3BC1AFC35B800FF1D0A /* SuccessViewController.swift */; };
 		5FD398091AF6F6440053FD73 /* Comminternal_Packmsg.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD398061AF6F6440053FD73 /* Comminternal_Packmsg.pb.swift */; };
 		5FD3980A1AF6F6440053FD73 /* IteasyNfclock_Model_comm.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD398071AF6F6440053FD73 /* IteasyNfclock_Model_comm.pb.swift */; };
@@ -245,6 +246,7 @@
 		5FAC142C1AE8B64500B372E2 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootNavigationViewController.swift; path = vc/RootNavigationViewController.swift; sourceTree = "<group>"; };
 		5FAC14471AE8D15600B372E2 /* MyUITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUITabBarController.swift; path = uicontrols/MyUITabBarController.swift; sourceTree = "<group>"; };
 		5FAC14491AE8DD4100B372E2 /* GlobalSessionUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalSessionUser.swift; path = nfclockios/GlobalSessionUser.swift; sourceTree = "<group>"; };
+		5FB3ABBA1B301E20005DA1EB /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		5FBCD3BC1AFC35B800FF1D0A /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuccessViewController.swift; path = vc/SuccessViewController.swift; sourceTree = "<group>"; };
 		5FD398061AF6F6440053FD73 /* Comminternal_Packmsg.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comminternal_Packmsg.pb.swift; sourceTree = "<group>"; };
 		5FD398071AF6F6440053FD73 /* IteasyNfclock_Model_comm.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IteasyNfclock_Model_comm.pb.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 		5F3A238C1B12DA7A006EADCB /* img */ = {
 			isa = PBXGroup;
 			children = (
+				5FB3ABBA1B301E20005DA1EB /* empty.png */,
 				5F0188641B1FCF03001B2633 /* line.png */,
 				5F3A238D1B12DA7A006EADCB /* NotificationBackgroundError.png */,
 				5F3A238E1B12DA7A006EADCB /* NotificationBackgroundError@2x.png */,
@@ -668,6 +671,7 @@
 				5F3A23AC1B12DA7A006EADCB /* NotificationButtonBackground@2x.png in Resources */,
 				5FA8E12F1B282ACB00156D7C /* www in Resources */,
 				5F0188651B1FCF03001B2633 /* line.png in Resources */,
+				5FB3ABBB1B301E20005DA1EB /* empty.png in Resources */,
 				5FD785BD1B0EC3EA003AA482 /* Localizable.strings in Resources */,
 				5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */,
 				5F3A23A21B12DA7A006EADCB /* NotificationBackgroundMessage@2x.png in Resources */,

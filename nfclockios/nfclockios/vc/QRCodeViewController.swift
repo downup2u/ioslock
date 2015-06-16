@@ -9,20 +9,27 @@
 import UIKit
 import Foundation
 import AVFoundation
+
+
+
+typealias onScanedText = (String!) ->Void
+
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    var delegate:ScanQRCodeDelegate?
+    var delegate:onScanedText?
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     let session = AVCaptureSession()
     var layer:AVCaptureVideoPreviewLayer?
     var line = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        var imgView = UIImageView(frame: view.frame)
+        var frame = CGRectMake(50, 100, view.frame.width - 100, view.frame.height-130)
+        
+        var imgView = UIImageView(frame: frame)
         imgView.image = UIImage(named: "empty")
         imgView.alpha = 0.7
         view.addSubview(imgView)
         self.setupCamera()
-    
+        self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(animated: Bool) {
@@ -88,7 +95,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
         self.session.stopRunning()
         println("code is \(stringValue)")
-        self.delegate?.onScanedText(stringValue!)
+        self.delegate?(stringValue!)
         self.navigationController?.popViewControllerAnimated(true)
 
         
