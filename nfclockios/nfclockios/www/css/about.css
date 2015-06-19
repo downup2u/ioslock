@@ -4,10 +4,6 @@ body{
 	margin:0px;
 }
 
-div{
-	width:inherit;
-	padding:10px;
-}
 
 div.content{
     text-indent:30px;
@@ -17,9 +13,20 @@ div.content{
 	text-align:center;
 }
 
+.main{
+    width:inherit;
+	padding:10px;
+}
+
+.footer{ 
+    width:100%;
+    position:absolute;
+    bottom:0;  
+    overflow:hidden;
+    text-align:center;
+}
+
 p{
 	font-family: SimSun,SimHei,Verdana, Geneva, sans-serif;
 	font-size:14px;
 }
-
-.footer{height:50px;position:absolute;bottom:0px;left:0px;} 
