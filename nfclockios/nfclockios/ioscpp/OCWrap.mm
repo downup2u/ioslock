@@ -17,7 +17,7 @@ void onclient_msg(boost::shared_ptr<std::string> pMsgReply){
     NSString*msgHex = [[NSString alloc] initWithCString:pMsgReply->c_str() encoding:NSASCIIStringEncoding];
   //  [ob onSrvMessage:msgHex]
     [[NSNotificationCenter defaultCenter]postNotificationName:@"onSrvMessage" object:msgHex];
-    NSLog(@"current thread = %@", [NSThread currentThread]);
+    NSLog(@"onclient_msg：current thread = %@", [NSThread currentThread]);
 }
 
 +(void)initModule:(NSString*)args
