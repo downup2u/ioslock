@@ -76,11 +76,14 @@ class LockRegisterViewController: UIViewController {
     func onScanedText(txt:String!){
         self.lockidField.text = txt
     }
+    
+    var qrCode:QRCodeHelper?
     @IBAction func onClickScanQR(sender: AnyObject) {
-        var storyBoardTask = UIStoryboard(name:"lock",bundle:nil)
-        var dvc = storyBoardTask.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
-        dvc.delegate = self.onScanedText
-        self.navigationController?.pushViewController(dvc,animated: true)
+       
+        self.qrCode = QRCodeHelper()
+        self.qrCode?.delegate = self.onScanedText
+        self.qrCode?.showView(self)
+       // self.navigationController?.pushViewController(dvc,animated: true)
     }
     @IBAction func onClickOK(sender: AnyObject) {
         if self.lockidField.text.isEmpty {

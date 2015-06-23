@@ -77,6 +77,10 @@
 		5F3A23AB1B12DA7A006EADCB /* NotificationButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A239B1B12DA7A006EADCB /* NotificationButtonBackground.png */; };
 		5F3A23AC1B12DA7A006EADCB /* NotificationButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A239C1B12DA7A006EADCB /* NotificationButtonBackground@2x.png */; };
 		5F3A355F1AF20DE70090154C /* LockLogoffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A355E1AF20DE70090154C /* LockLogoffViewController.swift */; };
+		5F3B7E601B39418200B0D136 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E5C1B39418200B0D136 /* QRCodeReader.swift */; };
+		5F3B7E611B39418200B0D136 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E5D1B39418200B0D136 /* QRCodeViewController.swift */; };
+		5F3B7E621B39418200B0D136 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E5E1B39418200B0D136 /* ReaderOverlayView.swift */; };
+		5F3B7E631B39418200B0D136 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E5F1B39418200B0D136 /* SwitchCameraButton.swift */; };
 		5F432CE91AFDF1A1008E45A5 /* useruserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F432CE71AFDF1A1008E45A5 /* useruserTableViewCell.swift */; };
 		5F432CEA1AFDF1A1008E45A5 /* useruserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F432CE81AFDF1A1008E45A5 /* useruserTableViewCell.xib */; };
 		5F432CF51AFEDA50008E45A5 /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F432CEC1AFEDA50008E45A5 /* SWCellScrollView.m */; };
@@ -92,7 +96,7 @@
 		5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F53B5321B0D7388002A2F3A /* TaskControl.storyboard */; };
 		5F5529111AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5529101AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m */; };
 		5F5529191AFF2E0D00CBA201 /* userDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5529181AFF2E0D00CBA201 /* userDelegate.swift */; };
-		5F6431BA1ADE3F0300789EE1 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6431B91ADE3F0300789EE1 /* QRCodeViewController.swift */; };
+		5F6431BA1ADE3F0300789EE1 /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6431B91ADE3F0300789EE1 /* QRCodeHelper.swift */; };
 		5F6B2D441ACCE3D300AE8A21 /* DoorMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B2D431ACCE3D300AE8A21 /* DoorMyProfileViewController.swift */; };
 		5F6B2D9C1ACD0C6200AE8A21 /* LockManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B2D9B1ACD0C6200AE8A21 /* LockManagementViewController.swift */; };
 		5F6B2D9E1ACD108C00AE8A21 /* LockRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B2D9D1ACD108C00AE8A21 /* LockRegisterViewController.swift */; };
@@ -209,6 +213,10 @@
 		5F3A239B1B12DA7A006EADCB /* NotificationButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotificationButtonBackground.png; sourceTree = "<group>"; };
 		5F3A239C1B12DA7A006EADCB /* NotificationButtonBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotificationButtonBackground@2x.png"; sourceTree = "<group>"; };
 		5F3A355E1AF20DE70090154C /* LockLogoffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LockLogoffViewController.swift; path = vc/LockLogoffViewController.swift; sourceTree = "<group>"; };
+		5F3B7E5C1B39418200B0D136 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		5F3B7E5D1B39418200B0D136 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		5F3B7E5E1B39418200B0D136 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		5F3B7E5F1B39418200B0D136 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		5F432CE71AFDF1A1008E45A5 /* useruserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = useruserTableViewCell.swift; path = uicontrols/useruserTableViewCell.swift; sourceTree = "<group>"; };
 		5F432CE81AFDF1A1008E45A5 /* useruserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = useruserTableViewCell.xib; path = uicontrols/useruserTableViewCell.xib; sourceTree = "<group>"; };
 		5F432CEB1AFEDA50008E45A5 /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
@@ -231,7 +239,7 @@
 		5F55290F1AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		5F5529101AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		5F5529181AFF2E0D00CBA201 /* userDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDelegate.swift; sourceTree = "<group>"; };
-		5F6431B91ADE3F0300789EE1 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = vc/QRCodeViewController.swift; sourceTree = "<group>"; };
+		5F6431B91ADE3F0300789EE1 /* QRCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeHelper.swift; path = vc/QRCodeHelper.swift; sourceTree = "<group>"; };
 		5F6B2D431ACCE3D300AE8A21 /* DoorMyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorMyProfileViewController.swift; path = vc/DoorMyProfileViewController.swift; sourceTree = "<group>"; };
 		5F6B2D9B1ACD0C6200AE8A21 /* LockManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LockManagementViewController.swift; path = vc/LockManagementViewController.swift; sourceTree = "<group>"; };
 		5F6B2D9D1ACD108C00AE8A21 /* LockRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LockRegisterViewController.swift; path = vc/LockRegisterViewController.swift; sourceTree = "<group>"; };
@@ -292,7 +300,7 @@
 				5F79936B1AFB2355006FBE71 /* 开门 */,
 				5F79936A1AFB233D006FBE71 /* 我 */,
 				5F7993691AFB2326006FBE71 /* 门禁管理 */,
-				5F6431B91ADE3F0300789EE1 /* QRCodeViewController.swift */,
+				5F6431B91ADE3F0300789EE1 /* QRCodeHelper.swift */,
 				5FAC142C1AE8B64500B372E2 /* RootNavigationViewController.swift */,
 				5FAC14471AE8D15600B372E2 /* MyUITabBarController.swift */,
 				5F432CE71AFDF1A1008E45A5 /* useruserTableViewCell.swift */,
@@ -408,6 +416,7 @@
 		5F1B77F61AC6836B00AF7827 /* nfclockios */ = {
 			isa = PBXGroup;
 			children = (
+				5F3B7E5B1B39418200B0D136 /* QRCodeReader */,
 				5FA8E12E1B282ACB00156D7C /* www */,
 				5F1CF4791AF84D28000A3A06 /* swiftmoment */,
 				5FE32C201AE78F84006A2AAC /* Default-568h@2x.png */,
@@ -509,6 +518,17 @@
 				5F3A239C1B12DA7A006EADCB /* NotificationButtonBackground@2x.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		5F3B7E5B1B39418200B0D136 /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				5F3B7E5C1B39418200B0D136 /* QRCodeReader.swift */,
+				5F3B7E5D1B39418200B0D136 /* QRCodeViewController.swift */,
+				5F3B7E5E1B39418200B0D136 /* ReaderOverlayView.swift */,
+				5F3B7E5F1B39418200B0D136 /* SwitchCameraButton.swift */,
+			);
+			path = QRCodeReader;
 			sourceTree = "<group>";
 		};
 		5F7993691AFB2326006FBE71 /* 门禁管理 */ = {
@@ -705,6 +725,7 @@
 				5FD3980F1AF743BD0053FD73 /* MyInfoUpdatePasswordViewController.swift in Sources */,
 				5FD77A6E1AD38292000E5453 /* DoorUserAddUserViewController.swift in Sources */,
 				5F15AC291ACA2B1E00DAEA4C /* protomsgutil.swift in Sources */,
+				5F3B7E631B39418200B0D136 /* SwitchCameraButton.swift in Sources */,
 				5F1B781F1AC6858700AF7827 /* LoginViewController.swift in Sources */,
 				5F3A23871B12C7A1006EADCB /* HexColor.m in Sources */,
 				5F53B5311B0D721D002A2F3A /* DateHelper.swift in Sources */,
@@ -731,7 +752,7 @@
 				5F15ABB91AC90CEB00DAEA4C /* UIColor+Extension.swift in Sources */,
 				5F53B5281B0D6DEC002A2F3A /* CKCalendarView.m in Sources */,
 				5F15AB921AC909F200DAEA4C /* StringExtension.swift in Sources */,
-				5F6431BA1ADE3F0300789EE1 /* QRCodeViewController.swift in Sources */,
+				5F6431BA1ADE3F0300789EE1 /* QRCodeHelper.swift in Sources */,
 				5F3A23831B12C419006EADCB /* TSMessageView.m in Sources */,
 				5FAC14031AE890F100B372E2 /* OCWrap.mm in Sources */,
 				5F15AB881AC908D700DAEA4C /* RegisterViewController.swift in Sources */,
@@ -751,6 +772,7 @@
 				5F15ABA71AC90A2600DAEA4C /* Field.swift in Sources */,
 				5F432CF91AFEDA50008E45A5 /* SWUtilityButtonView.m in Sources */,
 				5F15ABA91AC90A2600DAEA4C /* RingBuffer.swift in Sources */,
+				5F3B7E621B39418200B0D136 /* ReaderOverlayView.swift in Sources */,
 				5F15ABA61AC90A2600DAEA4C /* ExtensionRegistry.swift in Sources */,
 				5F3A23811B12C419006EADCB /* TSBlurView.m in Sources */,
 				5F1CF4941AF89A7C000A3A06 /* ChangeIDNumberViewController.swift in Sources */,
@@ -771,11 +793,13 @@
 				5F432CE91AFDF1A1008E45A5 /* useruserTableViewCell.swift in Sources */,
 				5F15ABAF1AC90AC800DAEA4C /* UIUtil.swift in Sources */,
 				5F1CF4801AF84D28000A3A06 /* Extensions.swift in Sources */,
+				5F3B7E601B39418200B0D136 /* QRCodeReader.swift in Sources */,
 				5F6B2D441ACCE3D300AE8A21 /* DoorMyProfileViewController.swift in Sources */,
 				5FBCD3BD1AFC35B800FF1D0A /* SuccessViewController.swift in Sources */,
 				5F15ABAA1AC90A2600DAEA4C /* UnknownFieldSet.swift in Sources */,
 				5F3A355F1AF20DE70090154C /* LockLogoffViewController.swift in Sources */,
 				5F432CF51AFEDA50008E45A5 /* SWCellScrollView.m in Sources */,
+				5F3B7E611B39418200B0D136 /* QRCodeViewController.swift in Sources */,
 				5F15ABA21AC90A2600DAEA4C /* CodedInputStream.swift in Sources */,
 				5F1CF6C11AFA004D000A3A06 /* LockUpdatePasswordViewController.swift in Sources */,
 			);
