@@ -32,8 +32,7 @@ class FindPasswordViewController: UIViewController {
         revealButton.addTarget(self, action: "sendAuthcode", forControlEvents: UIControlEvents.TouchUpInside)
         
         // Do any additional setup after loading the view.
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
         
         
@@ -48,23 +47,7 @@ class FindPasswordViewController: UIViewController {
         println("onDataCallback->current thread = \(NSThread.currentThread())");
     }
     
-    
-    var keyboard:KeyboardManager!
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+
     
     @IBOutlet weak var btnOK: UIButton!
     

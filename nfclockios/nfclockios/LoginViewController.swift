@@ -65,8 +65,7 @@ class LoginViewController: UIViewController {
     }
     
 
-    var keyboard:KeyboardManager!
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
 
         
@@ -92,9 +91,7 @@ class LoginViewController: UIViewController {
             passwordField.text = Globals.shared.getDefaultPassword()
         }
         
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
-       
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
         self.navigationController?.navigationBarHidden = true
     }
@@ -106,23 +103,6 @@ class LoginViewController: UIViewController {
     func onDataCallback(notification: NSNotification){
        
 
-    }
-    
-    override func viewDidAppear(animated: Bool)
-    {
-        accoutField.text = Globals.shared.getDefaultUserName()
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
     }
     
    

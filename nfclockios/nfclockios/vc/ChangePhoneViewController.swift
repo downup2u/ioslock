@@ -10,7 +10,6 @@ import UIKit
 
 class ChangePhoneViewController: UIViewController {
 
-    var keyboard:KeyboardManager!
     
     var delegate: ChangePhonumberDelegate?
     override func viewDidLoad() {
@@ -28,9 +27,7 @@ class ChangePhoneViewController: UIViewController {
         let revealButton = addSecureTextSwitcher(self.fieldAuthcode!,UIImage(named: "yzm")!,UIImage(named: "yzm_02")!,80)
         revealButton.addTarget(self, action: "sendAuthcode", forControlEvents: UIControlEvents.TouchUpInside)
         addButtonCorner(btnOK)
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
-    }
+     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,21 +67,7 @@ class ChangePhoneViewController: UIViewController {
         })
 
     }
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+
     
     func sendAuthcode() {
         if self.fieldPhone.text.isEmpty

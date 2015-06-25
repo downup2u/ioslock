@@ -25,8 +25,7 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         self.searchBar.delegate = self
         self.searchBar.placeholder = "请输入要搜索的人员姓名"
         
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onUserCallback:", name: "onUserCallback", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
        
@@ -59,22 +58,7 @@ class MyProfileMemberManagerViewController: UIViewController ,UITableViewDataSou
         println("onDataCallback->current thread = \(NSThread.currentThread())");
     }
     
-    var keyboard:KeyboardManager!
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+
     @IBAction func onClickAdd(sender: AnyObject) {
         let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("dooruseradduser") as! DoorUserAddUserViewController
         //dvc.delegate = self

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        IQKeyboardManager.sharedManager().enable = true
        // TSMessage.addCustomDesignFromFileWithName("AlternativeDesign.json")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSrvMessage:", name: "onSrvMessage", object: nil)
         // Override point for customization after application launch.

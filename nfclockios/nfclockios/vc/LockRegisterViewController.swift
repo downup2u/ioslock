@@ -10,8 +10,7 @@ import UIKit
 
 class LockRegisterViewController: UIViewController {
 
-    var keyboard:KeyboardManager!
-    @IBOutlet weak var viewLoginBk: UIView!    
+    @IBOutlet weak var viewLoginBk: UIView!
     @IBOutlet weak var btnOK: UIButton!
     @IBOutlet weak var lockidField: UITextField!
     @IBOutlet weak var lockpwdField: UITextField!
@@ -38,29 +37,12 @@ class LockRegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
         
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)       
-        
     }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+  
     func onDataCallback(notification: NSNotification){
         println("onDataCallback->current thread = \(NSThread.currentThread())");
     }

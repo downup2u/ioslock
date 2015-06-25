@@ -10,14 +10,11 @@ import UIKit
 
 class ChangeIDNumberViewController: UIViewController {
 
-    var keyboard:KeyboardManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addButtonCorner(btnOK)
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,20 +44,6 @@ class ChangeIDNumberViewController: UIViewController {
 
     
     }
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+
     
 }

@@ -9,8 +9,7 @@
 import UIKit
 
 class MyInfoUpdatePasswordViewController: UIViewController {
-    var keyboard:KeyboardManager!
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
 
         viewLoginBk.layer.borderColor = UIColor.colorWithHex("#E5E5E5")?.CGColor
@@ -25,8 +24,6 @@ class MyInfoUpdatePasswordViewController: UIViewController {
 
         let revealButton2 = addSecureTextSwitcher(self.fieldNewpassword!,UIImage(named: "xs")!,UIImage(named: "xs_02")!,30)
         revealButton2.addTarget(self, action: "showhidepassword2:", forControlEvents: UIControlEvents.TouchUpInside)
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
 
     }
 
@@ -75,21 +72,7 @@ class MyInfoUpdatePasswordViewController: UIViewController {
         
 
     }
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
+
 
     func showhidepassword1(sender: AnyObject) {
         self.fieldOldpassword.secureTextEntry = !self.fieldOldpassword.secureTextEntry

@@ -10,7 +10,6 @@ import UIKit
 
 class DoorUserAddUserViewController: UIViewController {
 
-    var keyboard:KeyboardManager!
     
     @IBOutlet weak var viewLoginBk: UIView!
     @IBOutlet weak var phonenumberField: UITextField!
@@ -33,8 +32,6 @@ class DoorUserAddUserViewController: UIViewController {
         addButtonCorner_OK(btnOK)
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataCallback:", name: "onDataCallback", object: nil)
-        var navigationBarViewRect:CGRect = CGRectMake(0.0,0.0,0.0,0.0)
-        keyboard = KeyboardManager(controller: self,navRect:navigationBarViewRect)
         
     }
     
@@ -77,21 +74,6 @@ class DoorUserAddUserViewController: UIViewController {
     }
 
 
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
-        keyboard.enableKeyboardManger()
-    }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-        keyboard.disableKeyboardManager()
-    }
-    
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        keyboard.endEditing()
-    }
     
 
 }
