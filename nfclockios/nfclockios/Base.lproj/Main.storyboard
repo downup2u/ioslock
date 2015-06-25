@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dlbj" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-AP-gdj">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geu-pM-LYJ" userLabel="vtitle">
                                 <rect key="frame" x="0.0" y="64" width="600" height="183"/>
@@ -169,7 +169,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="geu-pM-LYJ" firstAttribute="leading" secondItem="vF1-P3-PCl" secondAttribute="leading" id="0Mj-Bj-qhy"/>
                             <constraint firstItem="Q5t-es-OOk" firstAttribute="leading" secondItem="vF1-P3-PCl" secondAttribute="leading" id="0oT-t6-XIK"/>
@@ -179,6 +178,7 @@
                             <constraint firstItem="geu-pM-LYJ" firstAttribute="height" secondItem="ULQ-xr-XDq" secondAttribute="height" id="JhU-q6-amK"/>
                             <constraint firstAttribute="trailing" secondItem="ULQ-xr-XDq" secondAttribute="trailing" id="NRo-Ed-t14"/>
                             <constraint firstItem="sqH-a3-1mk" firstAttribute="top" secondItem="ULQ-xr-XDq" secondAttribute="bottom" id="Vh0-Ps-3TW"/>
+                            <constraint firstItem="sCj-AP-gdj" firstAttribute="top" secondItem="vF1-P3-PCl" secondAttribute="top" id="Vut-wp-cLD"/>
                             <constraint firstAttribute="trailing" secondItem="Q5t-es-OOk" secondAttribute="trailing" id="X5s-yB-5cj"/>
                             <constraint firstItem="ULQ-xr-XDq" firstAttribute="leading" secondItem="vF1-P3-PCl" secondAttribute="leading" id="ZVW-k5-nhB"/>
                             <constraint firstItem="Q5t-es-OOk" firstAttribute="top" secondItem="geu-pM-LYJ" secondAttribute="bottom" id="baN-9u-B5g"/>
@@ -189,6 +189,11 @@
                             <constraint firstItem="sCj-AP-gdj" firstAttribute="top" secondItem="KhJ-oY-zRq" secondAttribute="bottom" id="rYl-7R-PgJ"/>
                             <constraint firstItem="ULQ-xr-XDq" firstAttribute="top" secondItem="Q5t-es-OOk" secondAttribute="bottom" id="x2b-RA-dCj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rYl-7R-PgJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="OZ2-cz-4WD"/>
                     <connections>

@@ -1072,6 +1072,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5cbb0155-9dbc-45fe-9314-c440f29280c5";
 				SWIFT_OBJC_BRIDGING_HEADER = "nfclockios/ioscpp/NFCLock-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};
