@@ -21,9 +21,11 @@ class OpenRecordDetailViewController: UIViewController ,UITableViewDataSource,UI
         tableview.delegate = self        // Do any additional setup after loading the view.
         popDatePicker = PopDatePicker(sourceView: self.view)
         self.setMyCurDate(self.curDate)
-        refreshData()
+        //refreshData()
     }
-    
+    deinit {
+        println("OpenRecordDetailViewController is released")
+    }
     func refreshData(){
         var msgReq = IteasyNfclock.PkgLockGetLockOpenrecordReq.builder()
         msgReq.lockuuid = self.curLock.lockuuid
@@ -35,7 +37,9 @@ class OpenRecordDetailViewController: UIViewController ,UITableViewDataSource,UI
         msgReq.setQuerydatestart(startdateString)
         msgReq.setQuerydateend(enddateString)
         var msgReply = IteasyNfclock.PkgLockGetLockOpenrecordReply.builder()
+        println("refreshData request")
         getLocalMsg(msgReq,msgReply,{
+            println("refreshData reply")
             if(msgReply.issuccess){
                 
                 self.lockOpenrecordArray = msgReply.lockopenrecordlist
@@ -44,6 +48,8 @@ class OpenRecordDetailViewController: UIViewController ,UITableViewDataSource,UI
         })
         
     }
+    
+
     
     
     var popDatePicker : PopDatePicker?

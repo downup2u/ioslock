@@ -57,12 +57,12 @@ class useruserTableViewCell: SWTableViewCell {
         }
         else if pkgUserUser.userusertype == IteasyNfclock.EnUserUserType.UserUserTypeRegister{
             //已注册，添加
-            imgStatus.image = UIImage(named:"y_tj")
+            imgStatus.image = UIImage(named:"y_zc")
             rightbtns.sw_addUtilityButtonWithColor(UIColor.redColor(), icon: UIImage(named: "tj_sqm"))
         }
         else if pkgUserUser.userusertype == IteasyNfclock.EnUserUserType.UserUserTypeAdded{
             //已添加
-            imgStatus.image = UIImage(named:"y_zc")
+            imgStatus.image = UIImage(named:"y_tj")
         }
         //删除
         rightbtns.sw_addUtilityButtonWithColor(UIColor.redColor(), icon: UIImage(named: "Delete"))
