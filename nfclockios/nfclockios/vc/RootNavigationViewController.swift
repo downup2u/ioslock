@@ -39,7 +39,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
                 self.navigationBarHidden = false
                 viewController.navigationItem.leftBarButtonItem = nil
                // viewController.navigationItem.hidesBackButton = true
-                viewController.navigationItem.rightBarButtonItem = nil
+                
             }
             else{
                 if(self.navigationBarHidden){

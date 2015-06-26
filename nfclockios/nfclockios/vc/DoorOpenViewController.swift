@@ -21,10 +21,50 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
         var searchBar = UISearchBar()
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
+        
+        var btnOpenDoor = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        btnOpenDoor.frame = CGRectMake(0, 0, 32, 32);
+        btnOpenDoor.setImage(UIImage(named:"code_x"), forState: UIControlState.Normal)
+        btnOpenDoor.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        //btnOpenDoor.setBackgroundImage(UIImage(named: "code_x"), forState: UIControlState.Normal)
+        btnOpenDoor.addTarget(self, action: "onClickOpenDoor:", forControlEvents: UIControlEvents.TouchUpInside)
+        var rightBarButtonItem = UIBarButtonItem(customView:btnOpenDoor)
+        rightBarButtonItem.tintColor = UIColor.colorWithHex("#f96429")
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+  
+        
+        
         loaddata()
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLockCallback:", name: "onLockCallback", object: nil)
       
+    }
+    
+    var qrCode:QRCodeHelper?
+    func onScanedText(txt:String!){
+        var curlock:IteasyNfclock.db_lock?
+        for lock in GlobalSessionUser.shared.ownerLockArray{
+            if(txt == lock.lockdeviceid){
+                curlock = lock
+            }
+        }
+        for lock in GlobalSessionUser.shared.otherLockArray{
+            if(txt == lock.lockdeviceid){
+                curlock = lock
+            }
+        }
+        
+        if let curlock = curlock{
+            var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("dooropenpop") as! DoorOpenPopViewController
+            dvc.curLock = curlock
+            self.navigationController?.pushViewController(dvc,animated: true)
+        }
+
+    }
+    func onClickOpenDoor(sender: UIViewController){
+        self.qrCode = QRCodeHelper()
+        self.qrCode?.delegate = self.onScanedText
+        self.qrCode?.showView(self)
     }
     
     deinit {
@@ -123,8 +163,8 @@ class DoorOpenViewController: UIViewController,UICollectionViewDelegate,UICollec
             lock = self.otherLockArray[index]
             
         }
-        var storyBoardTask = UIStoryboard(name:"lock",bundle:nil)
-        var dvc = storyBoardTask.instantiateViewControllerWithIdentifier("dooropenpop") as! DoorOpenPopViewController
+
+        var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("dooropenpop") as! DoorOpenPopViewController
         dvc.curLock = lock
         self.navigationController?.pushViewController(dvc,animated: true)
         

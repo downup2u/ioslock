@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    var sArgs:String = "nfclockclient --srvuri=ws://nfclock.iteasysoft.com:9002 --connectinterval=5 --autoconnect=true"
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         IQKeyboardManager.sharedManager().enable = true
@@ -21,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onSrvMessage:", name: "onSrvMessage", object: nil)
         // Override point for customization after application launch.
         // var sArgs:String = "nfclockclient --srvuri=ws://192.168.1.199:9002 --connectinterval=5 --autoconnect=true"
-         var sArgs:String = "nfclockclient --srvuri=ws://nfclock.iteasysoft.com:9002 --connectinterval=5 --autoconnect=true"
-        OCWrap.initModule(sArgs)
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            OCWrap.initModule(self.sArgs)
+        })
         setLoginviewAsRootView()
       //  println("application->current thread = \(NSThread.currentThread())");
         return true
