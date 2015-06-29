@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+//--log=/Users/wxqdev/Downloads/iteasysoft/lockcpp/jni/lockcpp/proj/cli_ios/log.txt
     var sArgs:String = "nfclockclient --srvuri=ws://nfclock.iteasysoft.com:9002 --connectinterval=5 --autoconnect=true"
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

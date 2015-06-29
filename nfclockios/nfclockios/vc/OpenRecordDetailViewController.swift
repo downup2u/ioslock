@@ -19,7 +19,6 @@ class OpenRecordDetailViewController: UIViewController ,UITableViewDataSource,UI
 
         tableview.dataSource = self
         tableview.delegate = self        // Do any additional setup after loading the view.
-        popDatePicker = PopDatePicker(sourceView: self.view)
         self.setMyCurDate(self.curDate)
         //refreshData()
     }
@@ -52,16 +51,16 @@ class OpenRecordDetailViewController: UIViewController ,UITableViewDataSource,UI
 
     
     
-    var popDatePicker : PopDatePicker?
     
     func onClickSelDate(){
         var initDate = self.curDate
-        popDatePicker!.pick(self, initDate:initDate, dataChanged: {
-            (newDate : NSDate, sourceView : UIView) -> () in
-            
+        
+        DatePickerDialog().show(title: "选择日期", doneButtonTitle: "完成", cancelButtonTitle: "取消", datePickerMode: .Date) {
+            (newDate) -> Void in
             self.setMyCurDate(newDate)
             self.refreshData()
-        })
+        }
+
     }
     
     

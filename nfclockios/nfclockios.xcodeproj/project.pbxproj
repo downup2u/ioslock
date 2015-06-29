@@ -10,7 +10,7 @@
 		5F0188651B1FCF03001B2633 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0188641B1FCF03001B2633 /* line.png */; };
 		5F01CEDB1B046890003EA495 /* OpenRecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F01CEDA1B046890003EA495 /* OpenRecordDetailViewController.swift */; };
 		5F03AE531B1EEF2F002ECDC9 /* boost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03AE511B1EEF2F002ECDC9 /* boost.a */; };
-		5F03AE541B1EEF2F002ECDC9 /* liblockios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03AE521B1EEF2F002ECDC9 /* liblockios.a */; };
+		5F0B72751B40DAD4004F7FDC /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0B72741B40DAD4004F7FDC /* DatePickerDialog.swift */; };
 		5F12114F1ACA57B600B3DE25 /* lock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F12114E1ACA57B600B3DE25 /* lock.storyboard */; };
 		5F1211511ACA5A9800B3DE25 /* DoorOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1211501ACA5A9800B3DE25 /* DoorOpenViewController.swift */; };
 		5F1211531ACA5ABE00B3DE25 /* DoorManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1211521ACA5ABE00B3DE25 /* DoorManagementViewController.swift */; };
@@ -86,12 +86,7 @@
 		5F432CF71AFEDA50008E45A5 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F432CF01AFEDA50008E45A5 /* SWTableViewCell.m */; };
 		5F432CF81AFEDA50008E45A5 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F432CF21AFEDA50008E45A5 /* SWUtilityButtonTapGestureRecognizer.m */; };
 		5F432CF91AFEDA50008E45A5 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F432CF41AFEDA50008E45A5 /* SWUtilityButtonView.m */; };
-		5F53B5281B0D6DEC002A2F3A /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F53B5271B0D6DEC002A2F3A /* CKCalendarView.m */; };
-		5F53B52D1B0D7147002A2F3A /* PopDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F53B52A1B0D7147002A2F3A /* PopDatePicker.swift */; };
-		5F53B52E1B0D7147002A2F3A /* PopDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F53B52B1B0D7147002A2F3A /* PopDateViewController.swift */; };
-		5F53B52F1B0D7147002A2F3A /* PopDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F53B52C1B0D7147002A2F3A /* PopDateViewController.xib */; };
 		5F53B5311B0D721D002A2F3A /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F53B5301B0D721D002A2F3A /* DateHelper.swift */; };
-		5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F53B5321B0D7388002A2F3A /* TaskControl.storyboard */; };
 		5F5529111AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5529101AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m */; };
 		5F5529191AFF2E0D00CBA201 /* userDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5529181AFF2E0D00CBA201 /* userDelegate.swift */; };
 		5F6431BA1ADE3F0300789EE1 /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6431B91ADE3F0300789EE1 /* QRCodeHelper.swift */; };
@@ -132,6 +127,7 @@
 		5FD785C51B0EF17B003AA482 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD785C41B0EF17B003AA482 /* MemberTableViewCell.swift */; };
 		5FE32C221AE78F84006A2AAC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE32C201AE78F84006A2AAC /* Default-568h@2x.png */; };
 		5FE32C231AE78F84006A2AAC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE32C211AE78F84006A2AAC /* Default@2x.png */; };
+		5FF121B51B3D3F7700B1A3D3 /* liblockios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03AE521B1EEF2F002ECDC9 /* liblockios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +145,7 @@
 		5F01CEDA1B046890003EA495 /* OpenRecordDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenRecordDetailViewController.swift; path = vc/OpenRecordDetailViewController.swift; sourceTree = "<group>"; };
 		5F03AE511B1EEF2F002ECDC9 /* boost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost.a; path = cpplib/boost.a; sourceTree = "<group>"; };
 		5F03AE521B1EEF2F002ECDC9 /* liblockios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblockios.a; path = cpplib/liblockios.a; sourceTree = "<group>"; };
+		5F0B72741B40DAD4004F7FDC /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerDialog.swift; path = nfclockios/DatePickerDialog.swift; sourceTree = "<group>"; };
 		5F12114E1ACA57B600B3DE25 /* lock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = lock.storyboard; path = ../lock.storyboard; sourceTree = "<group>"; };
 		5F1211501ACA5A9800B3DE25 /* DoorOpenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorOpenViewController.swift; path = vc/DoorOpenViewController.swift; sourceTree = "<group>"; };
 		5F1211521ACA5ABE00B3DE25 /* DoorManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorManagementViewController.swift; path = vc/DoorManagementViewController.swift; sourceTree = "<group>"; };
@@ -238,13 +235,7 @@
 		5F432CF21AFEDA50008E45A5 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
 		5F432CF31AFEDA50008E45A5 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		5F432CF41AFEDA50008E45A5 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
-		5F53B5261B0D6DEC002A2F3A /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
-		5F53B5271B0D6DEC002A2F3A /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
-		5F53B52A1B0D7147002A2F3A /* PopDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDatePicker.swift; sourceTree = "<group>"; };
-		5F53B52B1B0D7147002A2F3A /* PopDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDateViewController.swift; sourceTree = "<group>"; };
-		5F53B52C1B0D7147002A2F3A /* PopDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopDateViewController.xib; sourceTree = "<group>"; };
 		5F53B5301B0D721D002A2F3A /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
-		5F53B5321B0D7388002A2F3A /* TaskControl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskControl.storyboard; sourceTree = "<group>"; };
 		5F55290F1AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		5F5529101AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		5F5529181AFF2E0D00CBA201 /* userDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDelegate.swift; sourceTree = "<group>"; };
@@ -300,8 +291,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF121B51B3D3F7700B1A3D3 /* liblockios.a in Frameworks */,
 				5F03AE531B1EEF2F002ECDC9 /* boost.a in Frameworks */,
-				5F03AE541B1EEF2F002ECDC9 /* liblockios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,11 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				5F3A23781B12C419006EADCB /* Classes */,
-				5F53B52A1B0D7147002A2F3A /* PopDatePicker.swift */,
-				5F53B52B1B0D7147002A2F3A /* PopDateViewController.swift */,
-				5F53B52C1B0D7147002A2F3A /* PopDateViewController.xib */,
-				5F53B5261B0D6DEC002A2F3A /* CKCalendarView.h */,
-				5F53B5271B0D6DEC002A2F3A /* CKCalendarView.m */,
 				5F55290F1AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.h */,
 				5F5529101AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m */,
 				5F432CEB1AFEDA50008E45A5 /* SWCellScrollView.h */,
@@ -418,6 +404,7 @@
 				5FD785BF1B0EC3EA003AA482 /* Localizable.strings */,
 				5FAC14491AE8DD4100B372E2 /* GlobalSessionUser.swift */,
 				5F21BA391ACE37A700CEDE1C /* Globals.swift */,
+				5F0B72741B40DAD4004F7FDC /* DatePickerDialog.swift */,
 				5F1B77F61AC6836B00AF7827 /* nfclockios */,
 				5F1B780C1AC6836B00AF7827 /* nfclockiosTests */,
 				5F1B77F51AC6836B00AF7827 /* Products */,
@@ -451,7 +438,6 @@
 				5F15AB841AC908A500DAEA4C /* vc */,
 				5F1B77F91AC6836B00AF7827 /* AppDelegate.swift */,
 				5F3A238C1B12DA7A006EADCB /* img */,
-				5F53B5321B0D7388002A2F3A /* TaskControl.storyboard */,
 				5F12114E1ACA57B600B3DE25 /* lock.storyboard */,
 				5F1B77FD1AC6836B00AF7827 /* Main.storyboard */,
 				5F1B78001AC6836B00AF7827 /* Images.xcassets */,
@@ -775,12 +761,10 @@
 				5F0188651B1FCF03001B2633 /* line.png in Resources */,
 				5FB3ABBB1B301E20005DA1EB /* empty.png in Resources */,
 				5FD785BD1B0EC3EA003AA482 /* Localizable.strings in Resources */,
-				5F53B5331B0D7388002A2F3A /* TaskControl.storyboard in Resources */,
 				5F3A23A21B12DA7A006EADCB /* NotificationBackgroundMessage@2x.png in Resources */,
 				5F3A23AA1B12DA7A006EADCB /* NotificationBackgroundWarningIcon@2x.png in Resources */,
 				5F3A23A31B12DA7A006EADCB /* NotificationBackgroundSuccess.png in Resources */,
 				5FE32C221AE78F84006A2AAC /* Default-568h@2x.png in Resources */,
-				5F53B52F1B0D7147002A2F3A /* PopDateViewController.xib in Resources */,
 				5F3A23A41B12DA7A006EADCB /* NotificationBackgroundSuccess@2x.png in Resources */,
 				5F3A23AB1B12DA7A006EADCB /* NotificationButtonBackground.png in Resources */,
 				5F3A238B1B12D991006EADCB /* TSMessagesDefaultDesign.json in Resources */,
@@ -816,7 +800,6 @@
 				5FAC144A1AE8DD4100B372E2 /* GlobalSessionUser.swift in Sources */,
 				5F1CF4911AF89A65000A3A06 /* ChangePhoneViewController.swift in Sources */,
 				5F15ABA11AC90A2600DAEA4C /* AbstractMessage.swift in Sources */,
-				5F53B52D1B0D7147002A2F3A /* PopDatePicker.swift in Sources */,
 				5F15AB861AC908CE00DAEA4C /* FindPasswordViewController.swift in Sources */,
 				5F1B77FA1AC6836B00AF7827 /* AppDelegate.swift in Sources */,
 				5F15ABA31AC90A2600DAEA4C /* CodedOutputStream.swift in Sources */,
@@ -836,13 +819,11 @@
 				5F7FEB931B3BDFB100CF8F3A /* IQToolbar.swift in Sources */,
 				5F1CF4831AF84D28000A3A06 /* TimeUnit.swift in Sources */,
 				5F15ABB91AC90CEB00DAEA4C /* UIColor+Extension.swift in Sources */,
-				5F53B5281B0D6DEC002A2F3A /* CKCalendarView.m in Sources */,
 				5F15AB921AC909F200DAEA4C /* StringExtension.swift in Sources */,
 				5F6431BA1ADE3F0300789EE1 /* QRCodeHelper.swift in Sources */,
 				5F3A23831B12C419006EADCB /* TSMessageView.m in Sources */,
 				5FAC14031AE890F100B372E2 /* OCWrap.mm in Sources */,
 				5F15AB881AC908D700DAEA4C /* RegisterViewController.swift in Sources */,
-				5F53B52E1B0D7147002A2F3A /* PopDateViewController.swift in Sources */,
 				5F5529111AFEE54700CBA201 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				5F7FEB941B3BDFB100CF8F3A /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				5F7FEB921B3BDFB100CF8F3A /* IQTitleBarButtonItem.swift in Sources */,
@@ -888,6 +869,7 @@
 				5FBCD3BD1AFC35B800FF1D0A /* SuccessViewController.swift in Sources */,
 				5F7FEB8C1B3BDFB100CF8F3A /* IQKeyboardManagerConstants.swift in Sources */,
 				5F15ABAA1AC90A2600DAEA4C /* UnknownFieldSet.swift in Sources */,
+				5F0B72751B40DAD4004F7FDC /* DatePickerDialog.swift in Sources */,
 				5F7FEB911B3BDFB100CF8F3A /* IQBarButtonItem.swift in Sources */,
 				5F3A355F1AF20DE70090154C /* LockLogoffViewController.swift in Sources */,
 				5F432CF51AFEDA50008E45A5 /* SWCellScrollView.m in Sources */,

@@ -23,7 +23,12 @@ void onclient_msg(boost::shared_ptr<std::string> pMsgReply){
 +(void)initModule:(NSString*)args
 {
     std::string sargs([args cStringUsingEncoding:NSASCIIStringEncoding]);
-    _initModule(sargs,boost::bind(onclient_msg,_1));
+    try{
+        _initModule(sargs,boost::bind(onclient_msg,_1));
+    }
+    catch(std::exception&e){
+        NSLog(@"initModule：error: current thread = %@",[NSThread currentThread]);
+    }
 }
 
 +(NSString*)sendMessage:(NSString*)sMsg
