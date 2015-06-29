@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "QR code_x@1x.png"
+      "filename" : "code_x@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "QR code_x@2x.png"
+      "filename" : "code_x@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "QR code_x@3x.png"
+      "filename" : "code_x@3x.png"
     }
   ],
   "info" : {

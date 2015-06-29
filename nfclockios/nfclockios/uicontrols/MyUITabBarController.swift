@@ -13,16 +13,17 @@ class MyUITabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         self.tabBar.barTintColor  = UIColor.colorWithHex("#213F7F")
-        
+
         var storyBoardTask = UIStoryboard(name:"lock",bundle:nil)
         var vc0 = storyBoardTask.instantiateViewControllerWithIdentifier("nav_opendoor") as! UINavigationController
         var vc1 = storyBoardTask.instantiateViewControllerWithIdentifier("nav_doormanager") as! UINavigationController
         var vc2 = storyBoardTask.instantiateViewControllerWithIdentifier("nav_me") as! UINavigationController
         
-        vc0.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"km"), selectedImage:UIImage(named:"km_02"))
-        vc1.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"mjgl"), selectedImage:UIImage(named:"mjgl_02"))
-        vc2.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"wo"), selectedImage:UIImage(named:"wo_02"))
+        vc0.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"km_02")!.imageWithRenderingMode(.AlwaysOriginal), selectedImage:UIImage(named:"km")!.imageWithRenderingMode(.AlwaysOriginal))
+        vc1.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"mjgl_02")!.imageWithRenderingMode(.AlwaysOriginal), selectedImage:UIImage(named:"mjgl")!.imageWithRenderingMode(.AlwaysOriginal))
+        vc2.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"wo_02")!.imageWithRenderingMode(.AlwaysOriginal), selectedImage:UIImage(named:"wo")!.imageWithRenderingMode(.AlwaysOriginal))
         
         let vcs = [vc0,vc1,vc2]
         for vc in vcs {
